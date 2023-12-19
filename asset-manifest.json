@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tungld160589/metricconversion/static/css/main.bff2a1b1.css",
+    "main.js": "/tungld160589/metricconversion/static/js/main.bc43b27a.js",
+    "static/media/Temperature.png": "/tungld160589/metricconversion/static/media/Temperature.8a9ef16e675fbbd5c409.png",
+    "static/media/Volume.png": "/tungld160589/metricconversion/static/media/Volume.17661402037a148baaa6.png",
+    "static/media/Time.png": "/tungld160589/metricconversion/static/media/Time.926d1c54cd89535db387.png",
+    "static/media/Lenght.png": "/tungld160589/metricconversion/static/media/Lenght.fdfaf269d3a8c142f831.png",
+    "static/media/MassIcon.png": "/tungld160589/metricconversion/static/media/MassIcon.1c21ebd586b856e706c5.png",
+    "static/media/Data.png": "/tungld160589/metricconversion/static/media/Data.26ebf55aff642b93b302.png",
+    "static/media/Currency-icon.jpg": "/tungld160589/metricconversion/static/media/Currency-icon.e193a2142fad20442e6f.jpg",
+    "static/media/Area.png": "/tungld160589/metricconversion/static/media/Area.7ea12162c9109d81f36b.png",
+    "static/media/Logo.png": "/tungld160589/metricconversion/static/media/Logo.2c14bfa303d9d7f6af11.png",
+    "index.html": "/tungld160589/metricconversion/index.html",
+    "main.bff2a1b1.css.map": "/tungld160589/metricconversion/static/css/main.bff2a1b1.css.map",
+    "main.bc43b27a.js.map": "/tungld160589/metricconversion/static/js/main.bc43b27a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bff2a1b1.css",
+    "static/js/main.bc43b27a.js"
+  ]
+}
