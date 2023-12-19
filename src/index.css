@@ -269,9 +269,9 @@ a {
 /*----------------------FAQs Control-------------------------*/
 .Faqs-control {
   background-color: #bda0a0;
-  height: 500px;
   padding-top: 10px;
   text-align: center;
+  padding-bottom: 20px;
 }
 .txthead-faqs {
   font-size: 30px;
@@ -280,4 +280,57 @@ a {
   font-style: normal;
   margin-bottom: 30px;
 }
+.question-group-control {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+}
+.faq-item {
+  margin-bottom: 10px;
+}
+.question-container,
+.answer-container {
+  background-color: #d9d9d9;
+  width: 650px;
+  font-style: normal;
+  color: black;
+}
+.question-container {
+  display: flex;
+  cursor: pointer;
+  border-radius: 3px;
+  min-height: 30px;
+  padding-top: 3px;
+  align-items: center;
+}
+.question-container span {
+  flex-basis: 96%;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  color: black;
+}
+.arrow-icon {
+  transition: transform 0.3s ease; /* Add a smooth transition for the arrow rotation */
+  color: #587cfb;
+  font-weight: bold;
+  flex-basis: 4%;
+  font-size: 18px;
+}
+.arrow-icon:hover {
+  color: #fcaf26;
+  cursor: pointer;
+}
+.arrow-icon.open {
+  transform: rotate(
+    180deg
+  ); /* Rotate the arrow 180 degrees when the answer is open */
+}
+.answer-container {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+  padding: 5px;
+}
+
 /*-----------------------------------------------------*/

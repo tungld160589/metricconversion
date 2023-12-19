@@ -4,8 +4,11 @@ import Header from "../components/Header";
 import TypeofConvers from "../components/TypeofConvers";
 import Faqs from "../components/Faqs";
 import Logo from "../img/Logo.png";
+import FAQsList from "../Data/FAQsList.json";
+import { useState } from "react";
 
 const Home = () => {
+  const [state, setState] = useState(FAQsList);
   return (
     <div className="container">
       <nav>
@@ -16,7 +19,14 @@ const Home = () => {
       </header>
       <article>
         <TypeofConvers Logo={Logo} />
-        <Faqs />
+        <div className="Faqs-control">
+          <div className="txthead-faqs">
+            <p>Frequently Asked Questions</p>
+            {state.map((rs, index) => (
+              <Faqs rs={rs} index={index} />
+            ))}
+          </div>
+        </div>
       </article>
       <footer>
         <Footer Logo={Logo} />

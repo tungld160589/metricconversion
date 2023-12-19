@@ -1,41 +1,30 @@
-const Faqs = () => {
+import { useState } from "react";
+const Faqs = (props) => {
+  const { rs, index } = props;
+  const [answersVisible, setAnswersVisible] = useState([]);
+  const toggleAnswer = (index) => {
+    setAnswersVisible((prevAnswers) => {
+      const newAnswers = [...prevAnswers];
+      newAnswers[index] = !newAnswers[index];
+      return newAnswers;
+    });
+  };
   return (
-    <div className="Faqs-control">
-      <div className="txthead-faqs">
-        <p>Frequently Asked Questions</p>
-      </div>
+    <div>
+      <div key={rs.id} className="faq-item"></div>
       <div className="question-group-control">
-        <div className="question-control">
-          <p>How do I enter numbers in Scientific Notation ?</p>
+        <div className="question-container" onClick={() => toggleAnswer(index)}>
+          <span>{rs.question}</span>
+          <div className={`arrow-icon ${answersVisible[index] ? "open" : ""}`}>
+            &#8744;
+          </div>
         </div>
-        <div className="question-control">
-          <p>What is a knot ?</p>
-        </div>
-        <div className="question-control">
-          <p>What is a nautical mile ?</p>
-        </div>
-        <div className="question-control">
-          <p>What about rainfall ?</p>
-        </div>
-        <div className="question-control">
-          <p>
-            How do i convert betrween inches of rain, and milimeter of rain ?
-          </p>
-        </div>
-        <div className="question-control">
-          <p>
-            What is the difference between th long ton,short ton and metric ton
-            ?
-          </p>
-        </div>
-        <div className="question-control">
-          <p>At what temperature are Celsius and Fahrenheit the same?</p>
-        </div>
-        <div className="question-control"></div>
+        {answersVisible[index] && (
+          <div className="answer-container">{rs.answer}</div>
+        )}
       </div>
     </div>
   );
 };
 
 export default Faqs;
-<></>;
