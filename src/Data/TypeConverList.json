@@ -1,0 +1,10 @@
+[
+  { "id": 1, "type": "Area", "image": "../img/Area.png" },
+  { "id": 2, "type": "Mass", "image": "../img/MassIcon.png" },
+  { "id": 3, "type": "Volume", "image": "../img/Volume.png" },
+  { "id": 4, "type": "Length", "image": "../img/Lenght.png" },
+  { "id": 5, "type": "Currency", "image": "../img/Currency-icon.jpg" },
+  { "id": 6, "type": "Temperature", "image": "../img/Temperature.png" },
+  { "id": 7, "type": "Time", "image": "../img/Time.png" },
+  { "id": 8, "type": "Data", "image": "../img/Data.png" }
+]
