@@ -2,7 +2,7 @@
   {
     "id": 1,
     "question": "How do I enter numbers in Scientific Notation ?",
-    "answer": "Click on the arrow icon next to each question to reveal the corresponding answer."
+    "answer": "<p>Scientific notation is a way of expressing very large or very small numbers in a more concise form using powers of 10. In scientific notation, a number is written as the product of a coefficient and 10 raised to a power (exponent).</p><p>Here's how you can enter numbers in scientific notation:</p><ol><li>For Large Numbers:</li><li>For Small Numbers:</li></ol>"
   },
   {
     "id": 2,
