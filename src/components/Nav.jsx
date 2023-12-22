@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "../img/Logo.png";
+
 const Nav = () => {
   return (
     <div className="nav-control">

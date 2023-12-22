@@ -1,5 +1,15 @@
 import ConvertChangeIMG from "../img/preview.png";
-const ConvertGraph = () => {
+import ConvertListData from "../Data/ConvertList.json";
+import { useState } from "react";
+const ConvertGraph = (props) => {
+  // const [data, setData] = useState([]);
+  // const text = props;
+  // const result = ConvertListData.filter((rs) => {
+  //   let search = rs.type.toLowerCase();
+  //   return search.indexOf(text) !== -1;
+  //   console.log(search);
+  // });
+
   return (
     <div className="convertgraph-control">
       <div className="convert-left-control">

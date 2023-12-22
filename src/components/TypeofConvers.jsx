@@ -33,7 +33,7 @@ const TypeofConvers = (props) => {
   const searchHandler = (e) => {
     const text11 = e.target.value;
     setSearchTerm(text11);
-    let text = e.target.value.toLowerCase();
+    let text = text11.toLowerCase();
     let result = ConvertList.filter((rs) => {
       let search = rs.nameOfUnit.toLowerCase();
       return search.indexOf(text) !== -1;
