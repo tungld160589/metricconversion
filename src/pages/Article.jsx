@@ -27,37 +27,40 @@ const Article = () => {
           
           <p>The United States, like many other countries, has a rich history of traditional
             units of measurement that were used for centuries before the adoption of the metric system.</p>
-            <div className="btnreadmore"><button>Read More</button></div>
+            <div className="btnreadmore"><Link to={"/Art_USMetriction"}><button>Read More</button></Link></div>
         </div>
       </div>
       <div className="Art1">
      
      <div><img src={meter} alt="Meter" /></div>
      <div className="Art2">
-       <p className="v1">The Meter</p>
+      <Link to={"/Art_Meter"}>
+      <p className="v1">The Meter</p>
+      </Link>
+       
        <p>The United States, like many other countries, has a rich history of traditional
          units of measurement that were used for centuries before the adoption of the metric system.</p>
-         <div className="btnreadmore"><button>Read More</button></div>
+         <div className="btnreadmore"><Link to={"/Art_Meter"}><button>Read More</button></Link></div>
      </div>
    </div>
    <div className="Art1">
      
      <div><img src={Metric} alt="The Metric" /></div>
      <div className="Art2">
-       <p className="v1">The Metric System</p>
+       <Link to={"/Art_Metric"}><p className="v1">The Metric System</p></Link>
        <p>The United States, like many other countries, has a rich history of traditional
          units of measurement that were used for centuries before the adoption of the metric system.</p>
-         <div className="btnreadmore"><button>Read More</button></div>
+         <div className="btnreadmore"><Link to={"/Art_Metric"}><button>Read More</button></Link></div>
      </div>
    </div>
    <div className="Art1">
      
      <div><img src={Si} alt="SI Units" /></div>
      <div className="Art2">
-       <p className="v1">The SI System</p>
+       <Link to={"/Art_SI"}><p className="v1">The SI System</p></Link>
        <p>The United States, like many other countries, has a rich history of traditional
          units of measurement that were used for centuries before the adoption of the metric system.</p>
-         <div className="btnreadmore"><button>Read More</button></div>
+         <div className="btnreadmore"><Link to={"/Art_SI"}><button>Read More</button></Link></div>
      </div>
    </div>
       <div>

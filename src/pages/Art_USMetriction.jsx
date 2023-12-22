@@ -1,6 +1,7 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import US1 from "../img/US1.png"
+import { Link } from "react-router-dom";
 
 
 const Art_USMetriction = () => {
@@ -14,12 +15,12 @@ const Art_USMetriction = () => {
         <input className="Art-Search" type="text" placeholder="Enter Article" />
       </div>
       <div className="Art-Unit">
-        <div><img style={{ width: '100%', height: '90%' }} src={US1} alt="U.S Metriction" /></div>
+        <div><img style={{ width: '100%', height: '90%' }} src={US1} alt="US1" /></div>
       </div>
       <div>
         <h3>Introduction</h3>
       </div>
-      <div className="Us">
+      <div className="Us_In">
         <h5>The United States, like many other countries, has a rich history of traditional units of measurement that were used for centuries before the adoption of the metric system.
           While the metric system is widely recognized and utilized in scientific and international contexts,
           traditional units of measurement still hold a place in American culture and everyday life.
@@ -54,7 +55,7 @@ const Art_USMetriction = () => {
         Understanding both traditional and metric systems is essential for effective communication and navigating diverse measurement practices in various contexts.
 
       </div>
-
+      <div className="btnback"><Link to={"/Article"}><button>Back</button></Link></div>
 
       <div>
         <Footer />
