@@ -1,6 +1,6 @@
 import ConvertChangeIMG from "../img/preview.png";
-import ConvertListData from "../Data/ConvertList.json";
-import { useState } from "react";
+// import ConvertListData from "../Data/ConvertList.json";
+// import { useState } from "react";
 const ConvertGraph = (props) => {
   // const [data, setData] = useState([]);
   // const text = props;
