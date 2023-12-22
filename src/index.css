@@ -363,6 +363,7 @@ a {
 .convertgraph-control {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 .convert-left-control {
   background-color: #fcaf26;
