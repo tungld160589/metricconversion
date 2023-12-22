@@ -2,8 +2,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import LengthLogo from "../img/Lenght.png";
 import ConvertGraph from "../components/ConvertGraph";
-import ConvertListData from "../Data/ConvertList.json";
-import { useState } from "react";
+
 const LengthConvert = () => {
   return (
     <>
