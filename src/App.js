@@ -10,6 +10,10 @@ import TemperatureConvert from "./pages/TemperatureConvert";
 import TimeConvert from "./pages/TimeConvert";
 import VolumeConvert from "./pages/VolumeConvert";
 import Aboutus from "./pages/Aboutus";
+import Art_Meter from "./pages/Art_Meter"
+import Art_Metric from "./pages/Art_Metric"
+import Art_USMetriction from "./pages/Art_USMetriction"
+import Art_SI from "./pages/Art_SI"
 
 function App() {
   return (
@@ -27,6 +31,10 @@ function App() {
           <Route path="/TimeConvert" element={<TimeConvert />} />
           <Route path="/VolumeConvert" element={<VolumeConvert />} />
           <Route path="/Aboutus" element={<Aboutus />} />
+          <Route path="/Art_Meter" element={<Art_Meter />} />
+          <Route path="/Art_Metric" element={<Art_Metric />} />
+          <Route path="/Art_USMetriction" element={<Art_USMetriction/>} />
+          <Route path="/Art_SI" element={<Art_SI/>} />
         </Routes>
       </BrowserRouter>
     </div>
