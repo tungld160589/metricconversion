@@ -2,8 +2,6 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import LengthLogo from "../img/Lenght.png";
 import ConvertGraph from "../components/ConvertGraph";
-// import AutoConverter from "../components/AutoConvert";
-
 const LengthConvert = () => {
   return (
     <>
@@ -18,9 +16,9 @@ const LengthConvert = () => {
         </div>
       </div>
       <div>
-        <ConvertGraph />
+        <ConvertGraph sortby="lengthconvert" />
       </div>
-      <div>{/* <AutoConverter /> */}</div>
+
       <div>
         <Footer />
       </div>

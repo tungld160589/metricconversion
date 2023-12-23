@@ -17,7 +17,7 @@ const AreaConvert = () => {
       </div>
 
       <div>
-        <ConvertGraph />
+        <ConvertGraph sortby="areaconvert" />
       </div>
       <div>
         <Footer />

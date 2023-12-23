@@ -17,7 +17,7 @@ const CurrencyConvert = () => {
       </div>
 
       <div>
-        <ConvertGraph />
+        <ConvertGraph sortby="currencyconvert" />
       </div>
       <div>
         <Footer />

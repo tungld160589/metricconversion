@@ -17,7 +17,7 @@ const TimeConvert = () => {
       </div>
 
       <div>
-        <ConvertGraph />
+        <ConvertGraph sortby="timeconvert" />
       </div>
       <div>
         <Footer />

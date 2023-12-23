@@ -17,7 +17,7 @@ const MassConvert = () => {
       </div>
 
       <div>
-        <ConvertGraph />
+        <ConvertGraph sortby="massconvert" />
       </div>
       <div>
         <Footer />

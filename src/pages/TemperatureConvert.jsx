@@ -17,7 +17,7 @@ const TemperatureConvert = () => {
       </div>
 
       <div>
-        <ConvertGraph />
+        <ConvertGraph sortby="temperatureconvert" />
       </div>
       <div>
         <Footer />

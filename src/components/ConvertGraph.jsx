@@ -1,26 +1,51 @@
 import ConvertChangeIMG from "../img/preview.png";
-import ConvertListData from "../Data/ConvertList.json";
+import ConvertList from "../Data/ConvertList.json";
 import { useState } from "react";
 const ConvertGraph = (props) => {
-  // const [result, setResult] = useState();
-  // const [txtResult, setTxtResult] = useState();
-  // setTxtResult = "Con ga con hehehe";
-  // const [data, setData] = useState([]);
-  // const text = props;
-  // const result = ConvertListData.filter((rs) => {
-  //   let search = rs.type.toLowerCase();
-  //   return search.indexOf(text) !== -1;
-  // });
-  // setData(result);
+  const [convertunit, setConvertUnit] = useState(ConvertList);
+  const { sortby } = props;
+  const [leftList, setleftList] = useState();
+  const [rightList, setRightList] = useState();
+  const [listVisible, setListVisible] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const selectOption = (option) => {
+    setSelectedOption(option);
+    setListVisible(false);
+  };
+  const toggleList = () => {
+    setListVisible(!listVisible);
+    let sortlist = convertunit.filter((rs) => {
+      let search = rs.type.toLowerCase();
+      return search.indexOf(sortby) !== -1;
+    });
+    setleftList(sortlist);
+  };
   return (
     <div className="convertgraph-control">
       <div className="bg-group-convert-control">
         <div className="bg-convert-left-control">
-          <div className="convert-left-control">
-            <div className="txt-convert-left">
-              <p>Choose unit convert</p>
-              <p>&#11167;</p>
+          <div>
+            <div className="convert-left-control">
+              <div className="txt-convert-left" onClick={toggleList}>
+                <span>{selectedOption || "Choose Unit Convert To:"}</span>
+                <div className={`arrow-icon ${listVisible ? "open" : ""}`}>
+                  &#11167;
+                </div>
+              </div>
+              {listVisible && (
+                <ul className="list-container">
+                  {leftList.map((option, index) => (
+                    <li
+                      key={index}
+                      onClick={() => selectOption(option.nameOfUnit)}
+                    >
+                      {option.nameOfUnit}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
+
             <input
               className="input-left"
               type="text"

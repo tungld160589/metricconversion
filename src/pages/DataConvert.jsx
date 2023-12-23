@@ -17,7 +17,7 @@ const DataConvert = () => {
       </div>
 
       <div>
-        <ConvertGraph />
+        <ConvertGraph sortby="dataconvert" />
       </div>
       <div>
         <Footer />

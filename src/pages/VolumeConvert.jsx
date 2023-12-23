@@ -17,7 +17,7 @@ const VolumeConvert = () => {
       </div>
 
       <div>
-        <ConvertGraph />
+        <ConvertGraph sortby="volumeconvert" />
       </div>
       <div>
         <Footer />

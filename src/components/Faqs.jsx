@@ -16,7 +16,7 @@ const Faqs = (dataFaqs) => {
         <div className="question-container" onClick={() => toggleAnswer(index)}>
           <span>{faqs.question}</span>
           <div className={`arrow-icon ${answersVisible[index] ? "open" : ""}`}>
-            &#8744;
+            &#11167;
           </div>
         </div>
         {answersVisible[index] && (
