@@ -49,7 +49,7 @@ const TypeofConvers = (props) => {
       </div>
       <div className="typeofconvert-group">
         {tempData.map((rs) => (
-          <TypeOfConverticon rs={rs} />
+          <TypeOfConverticon typeOf={rs} />
         ))}
       </div>
       <div className="typeofconver-search">

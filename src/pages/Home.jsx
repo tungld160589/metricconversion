@@ -23,7 +23,7 @@ const Home = () => {
           <div className="txthead-faqs">
             <p>Frequently Asked Questions</p>
             {state.map((rs, index) => (
-              <Faqs rs={rs} index={index} />
+              <Faqs faqs={rs} index={index} />
             ))}
           </div>
         </div>

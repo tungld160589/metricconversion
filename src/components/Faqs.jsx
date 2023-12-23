@@ -1,6 +1,6 @@
 import { useState } from "react";
-const Faqs = (props) => {
-  const { rs, index } = props;
+const Faqs = (dataFaqs) => {
+  const { faqs, index } = dataFaqs;
   const [answersVisible, setAnswersVisible] = useState([]);
   const toggleAnswer = (index) => {
     setAnswersVisible((prevAnswers) => {
@@ -11,16 +11,16 @@ const Faqs = (props) => {
   };
   return (
     <div>
-      <div key={rs.id} className="faq-item"></div>
+      <div key={faqs.id} className="faq-item"></div>
       <div className="question-group-control">
         <div className="question-container" onClick={() => toggleAnswer(index)}>
-          <span>{rs.question}</span>
+          <span>{faqs.question}</span>
           <div className={`arrow-icon ${answersVisible[index] ? "open" : ""}`}>
             &#8744;
           </div>
         </div>
         {answersVisible[index] && (
-          <div className="answer-container">{rs.answer}</div>
+          <div className="answer-container">{faqs.answer}</div>
         )}
       </div>
     </div>

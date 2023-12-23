@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-const TypeOfConverticon = (props) => {
-  const { rs } = props;
+const TypeOfConverticon = (typeofData) => {
+  const { typeOf } = typeofData;
   return (
-    <Link to={`/${rs.link}`}>
-      <div className={`TypeOfConverticon ${rs.id}`}>
+    <Link to={`/${typeOf.link}`}>
+      <div className={`TypeOfConverticon ${typeOf.id}`}>
         <div>
-          <img src={rs.image} />
+          <img src={typeOf.image} />
         </div>
-        <p>{rs.type}</p>
+        <p>{typeOf.type}</p>
       </div>
     </Link>
   );
