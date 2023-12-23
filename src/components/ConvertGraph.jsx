@@ -1,7 +1,9 @@
 import ConvertChangeIMG from "../img/preview.png";
-// import ConvertListData from "../Data/ConvertList.json";
-// import { useState } from "react";
+import ConvertListData from "../Data/ConvertList.json";
+import { useState } from "react";
 const ConvertGraph = (props) => {
+  const [result, setResult] = useState();
+  const [txtResult, setTxtResult] = useState();
   // const [data, setData] = useState([]);
   // const text = props;
   // const result = ConvertListData.filter((rs) => {
@@ -26,6 +28,7 @@ const ConvertGraph = (props) => {
           type="text"
           placeholder="ket qua chuyển đổi"
         />
+        {txtResult}
       </div>
       <div className="convert-change-img">
         <img src={ConvertChangeIMG} alt="" />
