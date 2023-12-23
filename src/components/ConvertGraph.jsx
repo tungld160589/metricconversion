@@ -10,30 +10,34 @@ const ConvertGraph = (props) => {
   const [listVisibleRight, setListVisibleRight] = useState(false);
   const [selectOptionRight, setSelectOptionRight] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
+  //Truyền biến option để kiểm tra thuộc tính hiển thị và lựa chọn của list box bên trái
   const selectOption = (option) => {
     setSelectedOption(option);
     setListVisible(false);
   };
+  //Truyền biến option để kiểm tra thuộc tính hiển thị và lựa chọn của list box bên phải
   const selectOptionR = (option) => {
     setSelectOptionRight(option);
     setListVisibleRight(false);
   };
+  // hiển thị list box bên trái
   const toggleList = () => {
     setListVisible(!listVisible);
+    /*lọc ra giá trị list bên trái theo giá trị sortby truyền vào*/
     let sortlist = convertunit.filter((rs) => {
       let search = rs.type.toLowerCase();
       return search.indexOf(sortby) !== -1;
     });
     setleftList(sortlist);
   };
+  // Clcik vào chuyển trạng thái của visible để hiển thị listbox bên phải
   const toggleListR = () => {
     setListVisibleRight(!listVisibleRight);
   };
-
+  //Lọc ra giá trị list bên phải bỏ qua giá trị đã chọn
   const handleClickLeft = (option) => {
     const updatedUnitList = leftList.filter((e) => {
       let unitChoose = option.nameOfUnit.toLowerCase();
-
       return e.nameOfUnit !== option.nameOfUnit;
     });
     setRightList(updatedUnitList);
