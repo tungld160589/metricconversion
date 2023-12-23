@@ -395,14 +395,38 @@ a {
 .txt-convert-left,
 .txt-convert-right {
   background-color: #d9d9d9;
-  width: 200px;
+  width: 250px;
   height: 25px;
   border-radius: 3px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 15px;
-  padding-left: 5px;
-  padding-right: 5px;
+  gap: 15px;
+}
+.list-unit-convert {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #e0e0e0;
+  position: absolute;
+  top: 49%;
+  width: 250px;
+  max-height: 100px; /* Set a maximum height for the list box */
+  overflow-y: auto; /* Enable vertical scroll bar if the list exceeds the maximum height */
+}
+
+.list-unit-convert li {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.list-unit-convert li:hover {
+  background-color: #ccc;
+}
+
+.list-unit-convert li:last-child {
+  border-bottom: none;
 }
 .input-left,
 .output-right {
@@ -477,41 +501,3 @@ a {
   margin-block: 10px;
 }
 /*==========================================*/
-.header-container {
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #f0f0f0;
-}
-
-.arrow-icon {
-  transition: transform 0.3s ease;
-}
-
-.arrow-icon.open {
-  transform: rotate(180deg);
-}
-
-.list-container {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  background-color: #e0e0e0;
-  position: absolute;
-}
-
-.list-container li {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  cursor: pointer;
-}
-
-.list-container li:hover {
-  background-color: #ccc;
-}
-
-.list-container li:last-child {
-  border-bottom: none;
-}
