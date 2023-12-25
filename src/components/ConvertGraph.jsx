@@ -37,7 +37,6 @@ const ConvertGraph = (props) => {
   //Lọc ra giá trị list bên phải bỏ qua giá trị đã chọn
   const handleClickLeft = (option) => {
     const updatedUnitList = leftList.filter((e) => {
-      let unitChoose = option.nameOfUnit.toLowerCase();
       return e.nameOfUnit !== option.nameOfUnit;
     });
     setRightList(updatedUnitList);
