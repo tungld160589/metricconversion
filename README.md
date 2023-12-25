@@ -9,9 +9,9 @@ Metric Conversion
 	2. Bùi Trọng Anh Đức	(Student1513435)
 	3. Lê Khánh Nguyên	(Student1513438)	
 =======================================
-Documentations : https://github.com/tungld160589/metricconversion/tree/main/Documentations
+Documentations : 
 =======================================
-Published website : https://github.com/tungld160589/metricconversion
+Published website : 
 =======================================
 Thank you for visit our website.
 
