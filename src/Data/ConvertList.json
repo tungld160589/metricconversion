@@ -1,6 +1,6 @@
 [
   { "id": 1, "nameOfUnit": "Meter", "type": "LengthConvert" },
-  { "id": 2, "nameOfUnit": "Kilimeter", "type": "LengthConvert" },
+  { "id": 2, "nameOfUnit": "Kilometer", "type": "LengthConvert" },
   { "id": 3, "nameOfUnit": "Centimeter", "type": "LengthConvert" },
   { "id": 4, "nameOfUnit": "Mile", "type": "LengthConvert" },
   { "id": 5, "nameOfUnit": "Yard", "type": "LengthConvert" },
@@ -13,7 +13,7 @@
   { "id": 12, "nameOfUnit": "Square Inch", "type": "AreaConvert" },
   { "id": 13, "nameOfUnit": "Cubic Meter", "type": "VolumeConvert" },
   { "id": 14, "nameOfUnit": "Cubic Kilometer", "type": "VolumeConvert" },
-  { "id": 15, "nameOfUnit": "Cubic Centieter", "type": "VolumeConvert" },
+  { "id": 15, "nameOfUnit": "Cubic Centimeter", "type": "VolumeConvert" },
   { "id": 16, "nameOfUnit": "Liter", "type": "VolumeConvert" },
   { "id": 17, "nameOfUnit": "US Cup", "type": "VolumeConvert" },
   { "id": 18, "nameOfUnit": "Second", "type": "TimeConvert" },
