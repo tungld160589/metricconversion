@@ -430,8 +430,8 @@ a {
 }
 .input-left,
 .output-right {
-  width: 150px;
-  height: 25px;
+  width: 180px;
+  height: 30px;
   border-radius: 3px;
   text-align: center;
 }
@@ -442,9 +442,20 @@ a {
   position: absolute;
   background: #d9d9d9;
   height: 30px;
-  width: 400px;
+  width: 500px;
   bottom: 5%;
   border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  padding-top: 3px;
+  gap: 3px;
+}
+.convert-result span:first-child {
+  color: red;
+  font-weight: 500;
+}
+.lock {
+  pointer-events: none;
 }
 /*------------------------------------------------------------------*/
 /* Article*/

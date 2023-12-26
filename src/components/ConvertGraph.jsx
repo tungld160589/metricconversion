@@ -16,6 +16,8 @@ const ConvertGraph = (props) => {
   const [chooseLeft, setChooseLeft] = useState();
   const [chooseRight, setChooseRight] = useState();
   const [outputRight, setOutputRight] = useState();
+  const [txtChooseRight, settxtChooseRight] = useState();
+  const [txtChooseLeft, settxtChooseLeft] = useState();
   //Truyền biến option để kiểm tra thuộc tính hiển thị và lựa chọn của list box bên trái
   const selectOption = (option) => {
     setSelectedOption(option);
@@ -57,7 +59,9 @@ const ConvertGraph = (props) => {
     setTempFactor(factorObject);
     let a = factorObject.factor * valInputLeft;
     setOutputRight(a);
+    setInputLeft(valInputLeft);
   };
+
   return (
     <div className="convertgraph-control">
       <div className="bg-group-convert-control">
@@ -77,6 +81,7 @@ const ConvertGraph = (props) => {
                         onClick={() => {
                           handleClickLeft(option);
                           selectOption(option.nameOfUnit);
+                          settxtChooseLeft(option.nameOfUnit);
                         }}
                       >
                         {option.nameOfUnit}
@@ -88,7 +93,7 @@ const ConvertGraph = (props) => {
             </div>
 
             <input
-              className="input-left"
+              className={`input-left ${chooseLeft || chooseRight || "lock"}`}
               type="number"
               onChange={onChangeLeft}
             />
@@ -109,6 +114,7 @@ const ConvertGraph = (props) => {
                       onClick={() => {
                         selectOptionR(optionR.nameOfUnit);
                         setChooseRight(optionR.id);
+                        settxtChooseRight(optionR.nameOfUnit);
                       }}
                     >
                       {optionR.nameOfUnit}
@@ -127,7 +133,13 @@ const ConvertGraph = (props) => {
         <div className="convert-change-img">
           <img src={ConvertChangeIMG} alt="" />
         </div>
-        <div className="convert-result"></div>
+        <div className="convert-result">
+          <span>Result:</span>
+          <span>
+            {outputRight &&
+              `${inputLeft} ${txtChooseLeft} = ${outputRight} ${txtChooseRight}`}
+          </span>
+        </div>
       </div>
     </div>
   );
