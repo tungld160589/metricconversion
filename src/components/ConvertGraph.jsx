@@ -43,20 +43,18 @@ const ConvertGraph = (props) => {
   //Lọc ra giá trị list bên phải bỏ qua giá trị đã chọn
   const handleClickLeft = (option) => {
     setChooseLeft(option.id);
-    const updatedUnitList = leftList.filter((e) => {
-      return e.nameOfUnit !== option.nameOfUnit;
-    });
+    const updatedUnitList = leftList.filter(
+      (e) => e.nameOfUnit !== option.nameOfUnit
+    );
     setRightList(updatedUnitList);
   };
   const onChangeLeft = (e) => {
     let valInputLeft = e.target.value;
-    console.log("id ben trai", chooseLeft);
-    console.log("id ben phai", chooseRight);
     let idSelectLeftRight = chooseLeft + chooseRight;
-    console.log("cong 2 id", idSelectLeftRight);
     const factorObject = FactorList.filter((f) => f.id === idSelectLeftRight);
     setTempFactor(factorObject);
-    console.log(tempFactor);
+    let a = factorObject[0].factor * valInputLeft;
+    setOutputRight(a);
   };
   return (
     <div className="convertgraph-control">
