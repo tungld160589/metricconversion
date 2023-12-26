@@ -51,9 +51,11 @@ const ConvertGraph = (props) => {
   const onChangeLeft = (e) => {
     let valInputLeft = e.target.value;
     let idSelectLeftRight = chooseLeft + chooseRight;
-    const factorObject = FactorList.filter((f) => f.id === idSelectLeftRight);
+    const factorObject = FactorList.find(
+      (item) => item.id === idSelectLeftRight
+    );
     setTempFactor(factorObject);
-    let a = factorObject[0].factor * valInputLeft;
+    let a = factorObject.factor * valInputLeft;
     setOutputRight(a);
   };
   return (

@@ -432,6 +432,11 @@ a {
 .output-right {
   width: 150px;
   height: 25px;
+  border-radius: 3px;
+  text-align: center;
+}
+.output-right {
+  pointer-events: none;
 }
 .convert-result {
   position: absolute;
