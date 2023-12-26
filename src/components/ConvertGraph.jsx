@@ -1,6 +1,7 @@
 import ConvertChangeIMG from "../img/preview.png";
 import ConvertList from "../Data/ConvertList.json";
 import { useState } from "react";
+import FactorList from "../Data/FactorList.json";
 const ConvertGraph = (props) => {
   const [convertunit, setConvertUnit] = useState(ConvertList);
   const { sortby } = props;
@@ -10,6 +11,11 @@ const ConvertGraph = (props) => {
   const [listVisibleRight, setListVisibleRight] = useState(false);
   const [selectOptionRight, setSelectOptionRight] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [tempFactor, setTempFactor] = useState(null);
+  const [inputLeft, setInputLeft] = useState();
+  const [chooseLeft, setChooseLeft] = useState();
+  const [chooseRight, setChooseRight] = useState();
+  const [outputRight, setOutputRight] = useState();
   //Truyền biến option để kiểm tra thuộc tính hiển thị và lựa chọn của list box bên trái
   const selectOption = (option) => {
     setSelectedOption(option);
@@ -36,10 +42,21 @@ const ConvertGraph = (props) => {
   };
   //Lọc ra giá trị list bên phải bỏ qua giá trị đã chọn
   const handleClickLeft = (option) => {
+    setChooseLeft(option.id);
     const updatedUnitList = leftList.filter((e) => {
       return e.nameOfUnit !== option.nameOfUnit;
     });
     setRightList(updatedUnitList);
+  };
+  const onChangeLeft = (e) => {
+    let valInputLeft = e.target.value;
+    console.log("id ben trai", chooseLeft);
+    console.log("id ben phai", chooseRight);
+    let idSelectLeftRight = chooseLeft + chooseRight;
+    console.log("cong 2 id", idSelectLeftRight);
+    const factorObject = FactorList.filter((f) => f.id === idSelectLeftRight);
+    setTempFactor(factorObject);
+    console.log(tempFactor);
   };
   return (
     <div className="convertgraph-control">
@@ -58,8 +75,8 @@ const ConvertGraph = (props) => {
                       <li
                         key={index}
                         onClick={() => {
-                          selectOption(option.nameOfUnit);
                           handleClickLeft(option);
+                          selectOption(option.nameOfUnit);
                         }}
                       >
                         {option.nameOfUnit}
@@ -72,8 +89,8 @@ const ConvertGraph = (props) => {
 
             <input
               className="input-left"
-              type="text"
-              placeholder="gia tri convert"
+              type="number"
+              onChange={onChangeLeft}
             />
           </div>
         </div>
@@ -91,6 +108,7 @@ const ConvertGraph = (props) => {
                       key={indexR}
                       onClick={() => {
                         selectOptionR(optionR.nameOfUnit);
+                        setChooseRight(optionR.id);
                       }}
                     >
                       {optionR.nameOfUnit}
@@ -102,8 +120,8 @@ const ConvertGraph = (props) => {
             <input
               className="output-right"
               type="text"
-              placeholder="ket qua chuyển đổi"
-            />
+              value={outputRight}
+            ></input>
           </div>
         </div>
         <div className="convert-change-img">
