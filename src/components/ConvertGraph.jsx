@@ -11,10 +11,9 @@ const ConvertGraph = (props) => {
   const [listVisibleRight, setListVisibleRight] = useState(false);
   const [selectOptionRight, setSelectOptionRight] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [tempFactor, setTempFactor] = useState(null);
-  const [inputLeft, setInputLeft] = useState();
-  const [chooseLeft, setChooseLeft] = useState();
-  const [chooseRight, setChooseRight] = useState();
+  const [inputLeft, setInputLeft] = useState(null);
+  const [chooseLeft, setChooseLeft] = useState(null);
+  const [chooseRight, setChooseRight] = useState(null);
   const [outputRight, setOutputRight] = useState();
   const [txtChooseRight, settxtChooseRight] = useState();
   const [txtChooseLeft, settxtChooseLeft] = useState();
@@ -37,10 +36,17 @@ const ConvertGraph = (props) => {
       return search.indexOf(sortby) !== -1;
     });
     setleftList(sortlist);
+    // kiểm tra giá trị lựa chọn bên phải và tự tính kê quả
+    {
+      chooseRight && setOutputRight(inputLeft * getFactorNum());
+    }
   };
   // Clcik vào chuyển trạng thái của visible để hiển thị listbox bên phải
   const toggleListR = () => {
     setListVisibleRight(!listVisibleRight);
+    {
+      inputLeft && setOutputRight(inputLeft * getFactorNum());
+    }
   };
   //Lọc ra giá trị list bên phải bỏ qua giá trị đã chọn
   const handleClickLeft = (option) => {
@@ -50,16 +56,18 @@ const ConvertGraph = (props) => {
     );
     setRightList(updatedUnitList);
   };
+  const getFactorNum = () => {
+    let filterValue = chooseLeft + chooseRight;
+    const FactorObject = FactorList.find((item) => item.id == filterValue);
+    let a = FactorObject.factor;
+    return a;
+  };
+
   const onChangeLeft = (e) => {
-    let valInputLeft = e.target.value;
-    let idSelectLeftRight = chooseLeft + chooseRight;
-    const factorObject = FactorList.find(
-      (item) => item.id === idSelectLeftRight
-    );
-    setTempFactor(factorObject);
-    let a = factorObject.factor * valInputLeft;
+    let tempvalue = e.target.value;
+    let a = getFactorNum() * tempvalue;
     setOutputRight(a);
-    setInputLeft(valInputLeft);
+    setInputLeft(tempvalue);
   };
 
   return (
