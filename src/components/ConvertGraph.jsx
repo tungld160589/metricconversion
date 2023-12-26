@@ -48,7 +48,7 @@ const ConvertGraph = (props) => {
       inputLeft && setOutputRight(inputLeft * getFactorNum());
     }
   };
-  //Lọc ra giá trị list bên phải bỏ qua giá trị đã chọn
+  //Lọc ra giá trị list bên phải bỏ qua giá trị đã chọn bên trái
   const handleClickLeft = (option) => {
     setChooseLeft(option.id);
     const updatedUnitList = leftList.filter(
@@ -56,20 +56,30 @@ const ConvertGraph = (props) => {
     );
     setRightList(updatedUnitList);
   };
+  // Lọc ra hệ số chuyển đổi
   const getFactorNum = () => {
     let filterValue = chooseLeft + chooseRight;
     const FactorObject = FactorList.find((item) => item.id == filterValue);
     let a = FactorObject.factor;
     return a;
   };
-
+  // khi thay đổi giá trị input bên trái
   const onChangeLeft = (e) => {
     let tempvalue = e.target.value;
     let a = getFactorNum() * tempvalue;
     setOutputRight(a);
     setInputLeft(tempvalue);
   };
-
+  // const invertedClick = () => {
+  //   let temp = chooseLeft;
+  //   setChooseLeft(chooseRight);
+  //   setChooseRight(temp);
+  //   let temptxt = txtChooseRight;
+  //   settxtChooseRight(txtChooseLeft);
+  //   settxtChooseLeft(temptxt);
+  //   let a = getFactorNum() * inputLeft;
+  //   setOutputRight(a);
+  // };
   return (
     <div className="convertgraph-control">
       <div className="bg-group-convert-control">
@@ -101,7 +111,7 @@ const ConvertGraph = (props) => {
             </div>
 
             <input
-              className={`input-left ${chooseLeft || chooseRight || "lock"}`}
+              className={`input-left ${chooseLeft || chooseRight || "lock"}`} //nếu lựa chọn bên trái hoặc bên phải = null thì sẽ khoá ô input bên trái
               type="number"
               onChange={onChangeLeft}
             />
@@ -112,24 +122,27 @@ const ConvertGraph = (props) => {
             <div className="txt-convert-right" onClick={toggleListR}>
               <span>{selectOptionRight || "Choose Unit Convert To:"}</span>
               <div className={`arrow-icon ${listVisibleRight ? "open" : ""}`}>
+                {" "}
+                {/*giá trị lisvisible = true thì xoay nut muổi tên */}
                 &#11167;
               </div>
-              {listVisibleRight && (
-                <ul className="list-unit-convert">
-                  {rightList.map((optionR, indexR) => (
-                    <li
-                      key={indexR}
-                      onClick={() => {
-                        selectOptionR(optionR.nameOfUnit);
-                        setChooseRight(optionR.id);
-                        settxtChooseRight(optionR.nameOfUnit);
-                      }}
-                    >
-                      {optionR.nameOfUnit}
-                    </li>
-                  ))}
-                </ul>
-              )}
+              {listVisibleRight &&
+                chooseLeft && ( //nếu Listvisible = fale sẽ thục hiện hiển thị in danh sách bên phải
+                  <ul className="list-unit-convert">
+                    {rightList.map((optionR, indexR) => (
+                      <li
+                        key={indexR}
+                        onClick={() => {
+                          selectOptionR(optionR.nameOfUnit);
+                          setChooseRight(optionR.id);
+                          settxtChooseRight(optionR.nameOfUnit);
+                        }}
+                      >
+                        {optionR.nameOfUnit}
+                      </li>
+                    ))}
+                  </ul>
+                )}
             </div>
             <input
               className="output-right"
@@ -138,7 +151,10 @@ const ConvertGraph = (props) => {
             ></input>
           </div>
         </div>
-        <div className="convert-change-img">
+        <div
+          className="convert-change-img"
+          // onClick={inputLeft && invertedClick}
+        >
           <img src={ConvertChangeIMG} alt="" />
         </div>
         <div className="convert-result">

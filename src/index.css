@@ -391,7 +391,15 @@ a {
 .convert-change-img {
   position: absolute;
   margin-top: 20px;
+  transition: width 2s, height 2s, transform 2s;
 }
+.convert-change-img :hover {
+  cursor: pointer;
+  transform: rotate(180deg);
+  width: 100px;
+  height: 100px;
+}
+
 .txt-convert-left,
 .txt-convert-right {
   background-color: #d9d9d9;
