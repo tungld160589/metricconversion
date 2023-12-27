@@ -111,7 +111,7 @@ const ConvertGraph = (props) => {
             </div>
 
             <input
-              className={`input-left ${chooseLeft || chooseRight || "lock"}`} //nếu lựa chọn bên trái hoặc bên phải = null thì sẽ khoá ô input bên trái
+              className={`input-left ${chooseRight || "lock"}`} //nếu lựa chọn  bên phải = null thì sẽ khoá ô input bên trái
               type="number"
               onChange={onChangeLeft}
             />
