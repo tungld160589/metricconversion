@@ -6,100 +6,91 @@ const ConvertGraph = (props) => {
   const [convertunit, setConvertUnit] = useState(ConvertList);
   const { sortby } = props;
   const [leftList, setleftList] = useState();
-  const [rightList, setRightList] = useState();
-  const [listVisible, setListVisible] = useState(false);
+  const [listVisibleLeft, setListVisibleLeft] = useState(false);
   const [listVisibleRight, setListVisibleRight] = useState(false);
   const [selectOptionRight, setSelectOptionRight] = useState(null);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [inputLeft, setInputLeft] = useState(null);
-  const [chooseLeft, setChooseLeft] = useState(null);
-  const [chooseRight, setChooseRight] = useState(null);
+  const [inputLeft, setInputLeft] = useState("");
   const [outputRight, setOutputRight] = useState();
   const [txtChooseRight, settxtChooseRight] = useState();
   const [txtChooseLeft, settxtChooseLeft] = useState();
-  //Truyền biến option để kiểm tra thuộc tính hiển thị và lựa chọn của list box bên trái
-  const selectOption = (option) => {
-    setSelectedOption(option);
-    setListVisible(false);
+  const [IDSelectLeft, setIDSelectLeft] = useState();
+  const [IDSelectRight, setIDSelectRight] = useState();
+
+  const selectOptionL = (option) => {
+    setSelectedOption(option.nameOfUnit);
+    setListVisibleLeft(false);
   };
-  //Truyền biến option để kiểm tra thuộc tính hiển thị và lựa chọn của list box bên phải
+
   const selectOptionR = (option) => {
-    setSelectOptionRight(option);
+    setSelectOptionRight(option.nameOfUnit);
     setListVisibleRight(false);
   };
-  // hiển thị list box bên trái
-  const toggleList = () => {
-    setListVisible(!listVisible);
-    /*lọc ra giá trị list bên trái theo giá trị sortby truyền vào*/
+
+  const toggleListL = () => {
+    setListVisibleLeft(!listVisibleLeft);
     let sortlist = convertunit.filter((rs) => {
       let search = rs.type.toLowerCase();
       return search.indexOf(sortby) !== -1;
     });
     setleftList(sortlist);
-    // kiểm tra giá trị lựa chọn bên phải và tự tính kê quả
-    {
-      chooseRight && setOutputRight(inputLeft * getFactorNum());
-    }
   };
-  // Clcik vào chuyển trạng thái của visible để hiển thị listbox bên phải
+
   const toggleListR = () => {
     setListVisibleRight(!listVisibleRight);
-    {
-      inputLeft && setOutputRight(inputLeft * getFactorNum());
+  };
+
+  const handleClickLeft = (option) => {
+    settxtChooseLeft(option.nameOfUnit);
+    setIDSelectLeft(option.id);
+    calOutput(option.id, IDSelectRight, inputLeft);
+  };
+
+  const handleClickRight = (option) => {
+    setIDSelectRight(option.id);
+    settxtChooseRight(option.nameOfUnit);
+    calOutput(option.id, IDSelectLeft, inputLeft);
+  };
+
+  const calOutput = (a, b, c) => {
+    if (c) {
+      let result = c * Factor(a, b);
+      setOutputRight(result);
     }
   };
-  //Lọc ra giá trị list bên phải bỏ qua giá trị đã chọn bên trái
-  const handleClickLeft = (option) => {
-    setChooseLeft(option.id);
-    const updatedUnitList = leftList.filter(
-      (e) => e.nameOfUnit !== option.nameOfUnit
-    );
-    setRightList(updatedUnitList);
+
+  const Factor = (a, b) => {
+    let id = a + b;
+    const FactorNum = FactorList.find((item) => item.id === id);
+    return FactorNum.factor;
   };
-  // Lọc ra hệ số chuyển đổi
-  const getFactorNum = () => {
-    let filterValue = chooseLeft + chooseRight;
-    const FactorObject = FactorList.find((item) => item.id == filterValue);
-    let a = FactorObject.factor;
-    return a;
-  };
-  // khi thay đổi giá trị input bên trái
+
   const onChangeLeft = (e) => {
     let tempvalue = e.target.value;
-    let a = getFactorNum() * tempvalue;
+    let a = tempvalue * Factor(IDSelectLeft, IDSelectRight);
     setOutputRight(a);
     setInputLeft(tempvalue);
   };
-  // const invertedClick = () => {
-  //   let temp = chooseLeft;
-  //   setChooseLeft(chooseRight);
-  //   setChooseRight(temp);
-  //   let temptxt = txtChooseRight;
-  //   settxtChooseRight(txtChooseLeft);
-  //   settxtChooseLeft(temptxt);
-  //   let a = getFactorNum() * inputLeft;
-  //   setOutputRight(a);
-  // };
+
   return (
     <div className="convertgraph-control">
       <div className="bg-group-convert-control">
         <div className="bg-convert-left-control">
           <div>
             <div className="convert-left-control">
-              <div className="txt-convert-left" onClick={toggleList}>
+              <div className="txt-convert-left" onClick={toggleListL}>
                 <span>{selectedOption || "Choose Unit Convert From:"}</span>
-                <div className={`arrow-icon ${listVisible ? "open" : ""}`}>
+                <div className={`arrow-icon ${listVisibleLeft ? "open" : ""}`}>
                   &#11167;
                 </div>
-                {listVisible && (
+                {listVisibleLeft && (
                   <ul className="list-unit-convert">
                     {leftList.map((option, index) => (
                       <li
                         key={index}
                         onClick={() => {
+                          selectOptionL(option);
                           handleClickLeft(option);
-                          selectOption(option.nameOfUnit);
-                          settxtChooseLeft(option.nameOfUnit);
                         }}
                       >
                         {option.nameOfUnit}
@@ -111,8 +102,9 @@ const ConvertGraph = (props) => {
             </div>
 
             <input
-              className={`input-left ${chooseRight || "lock"}`} //nếu lựa chọn  bên phải = null thì sẽ khoá ô input bên trái
+              className={`input-left ${IDSelectRight || "lock"}`}
               type="number"
+              value={inputLeft}
               onChange={onChangeLeft}
             />
           </div>
@@ -123,26 +115,23 @@ const ConvertGraph = (props) => {
               <span>{selectOptionRight || "Choose Unit Convert To:"}</span>
               <div className={`arrow-icon ${listVisibleRight ? "open" : ""}`}>
                 {" "}
-                {/*giá trị lisvisible = true thì xoay nut muổi tên */}
                 &#11167;
               </div>
-              {listVisibleRight &&
-                chooseLeft && ( //nếu Listvisible = fale sẽ thục hiện hiển thị in danh sách bên phải
-                  <ul className="list-unit-convert">
-                    {rightList.map((optionR, indexR) => (
-                      <li
-                        key={indexR}
-                        onClick={() => {
-                          selectOptionR(optionR.nameOfUnit);
-                          setChooseRight(optionR.id);
-                          settxtChooseRight(optionR.nameOfUnit);
-                        }}
-                      >
-                        {optionR.nameOfUnit}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+              {listVisibleRight && IDSelectLeft && (
+                <ul className="list-unit-convert">
+                  {leftList.map((option, indexR) => (
+                    <li
+                      key={indexR}
+                      onClick={() => {
+                        selectOptionR(option);
+                        handleClickRight(option);
+                      }}
+                    >
+                      {option.nameOfUnit}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
             <input
               className="output-right"
@@ -151,17 +140,14 @@ const ConvertGraph = (props) => {
             ></input>
           </div>
         </div>
-        <div
-          className="convert-change-img"
-          // onClick={inputLeft && invertedClick}
-        >
+        <div className="convert-change-img">
           <img src={ConvertChangeIMG} alt="" />
         </div>
         <div className="convert-result">
           <span>Result:</span>
           <span>
             {outputRight &&
-              `${inputLeft} ${txtChooseLeft} = ${outputRight} ${txtChooseRight}`}
+              `${inputLeft} ${txtChooseLeft}  = ${outputRight} ${txtChooseRight}`}
           </span>
         </div>
       </div>

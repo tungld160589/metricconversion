@@ -48,8 +48,8 @@ const TypeofConvers = (props) => {
         <p className="txt-header-typeofconvert">Type of Converters</p>
       </div>
       <div className="typeofconvert-group">
-        {tempData.map((rs) => (
-          <TypeOfConverticon typeOf={rs} />
+        {tempData.map((rs, index) => (
+          <TypeOfConverticon key={index} typeOf={rs} />
         ))}
       </div>
       <div className="typeofconver-search">
