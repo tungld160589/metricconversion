@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import MassLogo from "../img/MassIcon.png";
 import ConvertGraph from "../components/ConvertGraph";
 import MassContent from "../components/MassContent";
+import ClickToTop from "../components/ClickToTop";
 const MassConvert = () => {
   return (
     <>
@@ -25,6 +26,9 @@ const MassConvert = () => {
       </div>
       <div>
         <Footer />
+      </div>
+      <div className="click-to-top-control">
+        <ClickToTop />
       </div>
     </>
   );

@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import DataLogo from "../img/Data.png";
 import ConvertGraph from "../components/ConvertGraph";
 import DataContent from "../components/DataContent";
+import ClickToTop from "../components/ClickToTop";
 const DataConvert = () => {
   return (
     <>
@@ -25,6 +26,9 @@ const DataConvert = () => {
       </div>
       <div>
         <Footer />
+      </div>
+      <div className="click-to-top-control">
+        <ClickToTop />
       </div>
     </>
   );

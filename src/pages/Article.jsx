@@ -6,6 +6,7 @@ import Metric from "../img/Metric.png";
 import Si from "../img/SI.png";
 import { useState } from "react";
 import ArticleThumb from "../components/ArticleThumb";
+import ClickToTop from "../components/ClickToTop";
 export const ArticlesThumbList = [
   {
     id: 1,
@@ -70,6 +71,9 @@ const Article = () => {
 
       <div>
         <Footer />
+      </div>
+      <div className="click-to-top-control">
+        <ClickToTop />
       </div>
     </>
   );

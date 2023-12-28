@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import ConvertGraph from "../components/ConvertGraph";
 import TemperatureLogo from "../img/Temperature.png";
 import TemperatureContent from "../components/TemperatureContent";
+import ClickToTop from "../components/ClickToTop";
 const TemperatureConvert = () => {
   return (
     <>
@@ -25,6 +26,9 @@ const TemperatureConvert = () => {
       </div>
       <div>
         <Footer />
+      </div>
+      <div className="click-to-top-control">
+        <ClickToTop />
       </div>
     </>
   );

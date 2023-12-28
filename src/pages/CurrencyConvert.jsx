@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import ConvertGraph from "../components/ConvertGraph";
 import CurrencyLogo from "../img/Currency-icon.jpg";
 import CurremcyContent from "../components/CurencyContent";
+import ClickToTop from "../components/ClickToTop";
 const CurrencyConvert = () => {
   return (
     <>
@@ -25,6 +26,9 @@ const CurrencyConvert = () => {
       </div>
       <div>
         <Footer />
+      </div>
+      <div className="click-to-top-control">
+        <ClickToTop />
       </div>
     </>
   );

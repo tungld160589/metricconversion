@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import ConvertGraph from "../components/ConvertGraph";
 import Arealogo from "../img/Area.png";
 import AreaContent from "../components/AreaContent";
+import ClickToTop from "../components/ClickToTop";
 const AreaConvert = () => {
   return (
     <>
@@ -25,6 +26,9 @@ const AreaConvert = () => {
       </div>
       <div>
         <Footer />
+      </div>
+      <div className="click-to-top-control">
+        <ClickToTop />
       </div>
     </>
   );

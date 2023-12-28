@@ -2,7 +2,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import ConvertGraph from "../components/ConvertGraph";
 import TimeLogo from "../img/Time.png";
-
+import ClickToTop from "../components/ClickToTop";
 import TimeContent from "../components/TimeContent";
 const TimeConvert = () => {
   return (
@@ -26,6 +26,9 @@ const TimeConvert = () => {
       </div>
       <div>
         <Footer />
+      </div>
+      <div className="click-to-top-control">
+        <ClickToTop />
       </div>
     </>
   );

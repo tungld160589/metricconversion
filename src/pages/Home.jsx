@@ -5,6 +5,7 @@ import TypeofConvers from "../components/TypeofConvers";
 import Faqs from "../components/Faqs";
 import Logo from "../img/Logo.png";
 import FAQsList from "../Data/FAQsList.json";
+import ClickToTop from "../components/ClickToTop";
 import { useState } from "react";
 
 const Home = () => {
@@ -31,6 +32,9 @@ const Home = () => {
       <footer>
         <Footer Logo={Logo} />
       </footer>
+      <div className="click-to-top-control">
+        <ClickToTop />
+      </div>
     </div>
   );
 };

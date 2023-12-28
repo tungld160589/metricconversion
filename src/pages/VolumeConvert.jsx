@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import ConvertGraph from "../components/ConvertGraph";
 import VolumeLogo from "../img/Volume.png";
 import VolumeContent from "../components/VolumeContent";
+import ClickToTop from "../components/ClickToTop";
 const VolumeConvert = () => {
   return (
     <>
@@ -25,6 +26,9 @@ const VolumeConvert = () => {
       </div>
       <div>
         <Footer />
+      </div>
+      <div className="click-to-top-control">
+        <ClickToTop />
       </div>
     </>
   );
