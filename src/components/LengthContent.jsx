@@ -1,14 +1,42 @@
 const LengthContent = () => {
   return (
     <>
-      <ul>
-        <li>Inchs</li>
-        <li>Milimeters</li>
-        <li>Feets</li>
-        <li>Meters</li>
-        <li>Yards</li>
-        <li>Miles</li>
-        <li>Kilometers</li>
+      <ul className="ul-convert-content">
+        <li className="li-convert-content">
+          <h4>Inchs:</h4>
+        </li>
+        <p className="span-convert-content"></p>
+        <p className="span-convert-content"></p>
+        <li className="li-convert-content">
+          <h4>Milimeters:</h4>
+        </li>
+        <p className="span-convert-content"></p>
+        <p className="span-convert-content"></p>
+        <li className="li-convert-content">
+          <h4>Feets:</h4>
+        </li>
+        <p className="span-convert-content"></p>
+        <p className="span-convert-content"></p>
+        <li className="li-convert-content">
+          <h4>Meters:</h4>
+        </li>
+        <p className="span-convert-content"></p>
+        <p className="span-convert-content"></p>
+        <li className="li-convert-content">
+          <h4>Yards:</h4>
+        </li>
+        <p className="span-convert-content"></p>
+        <p className="span-convert-content"></p>
+        <li className="li-convert-content">
+          <h4>Miles:</h4>
+        </li>
+        <p className="span-convert-content"></p>
+        <p className="span-convert-content"></p>
+        <li className="li-convert-content">
+          <h4>Kilometers:</h4>
+        </li>
+        <p className="span-convert-content"></p>
+        <p className="span-convert-content"></p>
       </ul>
     </>
   );

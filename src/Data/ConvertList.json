@@ -43,5 +43,6 @@
   { "id": "42", "nameOfUnit": "Byte", "type": "DataConvert" },
   { "id": "43", "nameOfUnit": "Bit", "type": "DataConvert" },
   { "id": "44", "nameOfUnit": "Gigabit", "type": "DataConvert" },
-  { "id": "45", "nameOfUnit": "Gigabyte", "type": "DataConvert" }
+  { "id": "45", "nameOfUnit": "Gigabyte", "type": "DataConvert" },
+  { "id": "46", "nameOfUnit": "Kelvin", "type": "TemperatureConvert" }
 ]

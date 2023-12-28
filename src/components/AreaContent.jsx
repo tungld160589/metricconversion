@@ -14,7 +14,9 @@ const AreaContent = () => {
           <li className="li-convert-content">square in</li>
           <li className="li-convert-content">sq inches, sq inch, sq in</li>
           <li className="li-convert-content">inches/-2, inch/-2, in/-2</li>
-          <li className="li-convert-content">inches^2, inch^2, in^2</li>
+          <li className="li-convert-content">
+            inches<sup>2</sup>, inch<sup>2</sup>, in<sup>2</sup>
+          </li>
           <li className="li-convert-content">
             inchess <sup>2</sup>, inch<sup>2</sup>, in<sup>2</sup> (also denoted
             by <sup>"2</sup> )
