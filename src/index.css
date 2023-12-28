@@ -492,17 +492,13 @@ a {
   align-items: center;
 }
 
-.v1 {
+/* .v1 {
   font-family: "Inter";
   font-style: "bold";
   font-weight: 600;
   color: black;
-}
-.btnreadmore {
-  text-align: right;
-  border: 5px solid var(#626060);
-  border-radius: 10px;
-}
+} */
+
 .Art-Unit {
   width: 100%;
   height: 100%;
@@ -545,4 +541,6 @@ a {
 }
 .readmore-btn {
   text-align: right;
+  border: 5px solid var(#626060);
+  border-radius: 10px;
 }
