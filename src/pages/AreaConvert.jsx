@@ -2,6 +2,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import ConvertGraph from "../components/ConvertGraph";
 import Arealogo from "../img/Area.png";
+import AreaContent from "../components/AreaContent";
 const AreaConvert = () => {
   return (
     <>
@@ -18,6 +19,9 @@ const AreaConvert = () => {
 
       <div>
         <ConvertGraph sortby="areaconvert" />
+      </div>
+      <div className="convert-content">
+        <AreaContent />
       </div>
       <div>
         <Footer />

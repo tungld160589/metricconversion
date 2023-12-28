@@ -2,6 +2,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import ConvertGraph from "../components/ConvertGraph";
 import VolumeLogo from "../img/Volume.png";
+import VolumeContent from "../components/VolumeContent";
 const VolumeConvert = () => {
   return (
     <>
@@ -18,6 +19,9 @@ const VolumeConvert = () => {
 
       <div>
         <ConvertGraph sortby="volumeconvert" />
+      </div>
+      <div className="convert-content">
+        <VolumeContent />
       </div>
       <div>
         <Footer />

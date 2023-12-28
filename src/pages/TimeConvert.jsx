@@ -2,6 +2,8 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import ConvertGraph from "../components/ConvertGraph";
 import TimeLogo from "../img/Time.png";
+
+import TimeContent from "../components/TimeContent";
 const TimeConvert = () => {
   return (
     <>
@@ -18,6 +20,9 @@ const TimeConvert = () => {
 
       <div>
         <ConvertGraph sortby="timeconvert" />
+      </div>
+      <div className="convert-content">
+        <TimeContent />
       </div>
       <div>
         <Footer />

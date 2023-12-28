@@ -2,6 +2,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import ConvertGraph from "../components/ConvertGraph";
 import TemperatureLogo from "../img/Temperature.png";
+import TemperatureContent from "../components/TemperatureContent";
 const TemperatureConvert = () => {
   return (
     <>
@@ -18,6 +19,9 @@ const TemperatureConvert = () => {
 
       <div>
         <ConvertGraph sortby="temperatureconvert" />
+      </div>
+      <div className="convert-content">
+        <TemperatureContent />
       </div>
       <div>
         <Footer />

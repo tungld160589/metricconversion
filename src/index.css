@@ -459,6 +459,22 @@ a {
   pointer-events: none;
 }
 /*------------------------------------------------------------------*/
+/*--------------  Convert Content -----------------------------------*/
+.convert-content {
+  /* margin-bottom: 20px; */
+  margin: 30px;
+}
+.ul-convert-content .li-convert-content {
+  list-style-type: disc;
+  color: black;
+}
+.li-convert-content {
+  margin-bottom: 8px;
+}
+.span-convert-content {
+  margin-bottom: 20px;
+}
+/*------------------------------------------------------------------*/
 /* Article*/
 .Art {
   display: flex;
