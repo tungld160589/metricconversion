@@ -492,21 +492,6 @@ a {
   align-items: center;
 }
 
-.Art1 {
-  background-color: #fffbfb;
-  display: flex;
-  gap: 15px;
-  margin-block: 50px;
-}
-
-.Art1 img {
-  width: 100px;
-  height: 100px;
-}
-.Art2 {
-  font-size: medium;
-  font-style: italic;
-}
 .v1 {
   font-family: "Inter";
   font-style: "bold";
@@ -533,3 +518,31 @@ a {
   margin-block: 10px;
 }
 /*==========================================*/
+.article-thumb-group-control {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  margin-bottom: 20px;
+}
+.article-thumb-control {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.article-thumb-img-control img {
+  width: 100px;
+  height: 100px;
+}
+.article-thumb-title {
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.article-thumb-txt-control {
+  font-style: italic;
+  background-color: #fffbfb;
+}
+.readmore-btn {
+  text-align: right;
+}
