@@ -5,8 +5,22 @@ import meter from "../img/Meter.png";
 import Metric from "../img/Metric.png";
 import Si from "../img/SI.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import resultSet from "../Data/Article.json"
 
 const Article = () => {
+  const [searchTerm, setSerchTerm]= useState("")
+  const [state, setState]= useState(resultSet);
+  const searchHandler = (e)=> {
+    const act= e.target.value;
+    setSerchTerm(act);
+    let text = act.toLowerCase();
+    let result = resultSet.filter((rs) =>{
+      let search = rs.title.toLowerCase ();
+      return search.indexOf(text) !== -1;
+    })
+    setState(result)
+  }
   return (
     <>
       <div>
@@ -14,7 +28,20 @@ const Article = () => {
       </div>
       <div className="Art">
         <p>Article</p>
-        <input className="Art-Search" type="text" placeholder="Enter Article" />
+        <input size={45}
+          value={searchTerm}
+          placeholder="Enter Article name..."
+          onChange={searchHandler}
+        />
+        {searchTerm && (
+          <div className="resultSearch">
+            {state.map((rs) => (
+              <Link to={`/${rs.type}`}>
+                <div>{rs.title}</div>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
       <div className="Art1">
         <div>
