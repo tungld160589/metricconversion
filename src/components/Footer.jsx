@@ -41,13 +41,13 @@ const Footer = () => {
       <div className="fter-3">
         <p>Short Link</p>
         <ul>
-          <Link>
+          <Link to={"/"}>
             <li>Home</li>
           </Link>
-          <Link>
+          <Link to={"/Article"}>
             <li>Article</li>
           </Link>
-          <Link>
+          <Link to={"/Aboutus"}>
             <li>About us</li>
           </Link>
         </ul>
