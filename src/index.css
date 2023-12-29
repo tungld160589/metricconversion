@@ -513,6 +513,14 @@ a {
   text-align: justify;
   font-size: 12;
   margin-block: 10px;
+  
+}
+.US1{
+  padding: 10px;
+}
+.Us_In{
+  background-color: #a9dff7;
+  
 }
 .btnback{
   text-align: center;
@@ -523,6 +531,7 @@ a {
   font-weight: 500;
   
 }
+
 /*==========================================*/
 .article-thumb-group-control {
   display: grid;
