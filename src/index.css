@@ -558,9 +558,10 @@ a {
   background-color: #03a9f4;
   color: #fff;
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 800;
   opacity: 1;
   border: #03a9f4;
+  margin-bottom: 8px;
 }
 .back-to-top-group {
   position: absolute;
@@ -572,6 +573,8 @@ a {
   cursor: pointer;
 }
 .txt-back-to-top {
-  font-size: 30px;
-  color: #f5a821;
+  font-size: 20px;
+  color: #03a9f4;
+  font-weight: 650;
+  line-height: normal;
 }
