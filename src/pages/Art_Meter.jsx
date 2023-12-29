@@ -12,7 +12,7 @@ const Art_Meter = () => {
       </div>
       <div className="Art">
         <p>Article-The Meter</p>
-        <input className="Art-Search" type="text" placeholder="Enter Article" />
+        {/* <input className="Art-Search" type="text" placeholder="Enter Article" /> */}
       </div>
       <div className="Art-Unit">
         <div>
