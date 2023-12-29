@@ -486,6 +486,7 @@ a {
   font-size: 30px;
   line-height: 17px;
   justify-content: space-between;
+  position: relative;
 }
 .Art-Search {
   box-sizing: border-box;
@@ -512,6 +513,15 @@ a {
   text-align: justify;
   font-size: 12;
   margin-block: 10px;
+}
+.btnback{
+  text-align: center;
+  border: 5px solid var(#626060);
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 20px;
+  font-weight: 500;
+  
 }
 /*==========================================*/
 .article-thumb-group-control {
