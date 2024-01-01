@@ -1,17 +1,11 @@
 import { useState } from "react";
 const LengthContent = () => {
-  const [visible, setVisible] = useState([]);
   const [visible1, setVisibe1] = useState(false);
   const [visible2, setVisibe2] = useState(false);
   const [visible3, setVisibe3] = useState(false);
   const [visible4, setVisibe4] = useState(false);
-  const toggleReadMore = (index) => {
-    setVisible((prevContent) => {
-      const newContent = [...prevContent];
-      newContent[index] = !newContent[index];
-      return newContent;
-    });
-  };
+  const [visible5, setVisibe5] = useState(false);
+
   const handleReadmore = (option) => {
     switch (option) {
       case 1:
@@ -25,6 +19,9 @@ const LengthContent = () => {
         break;
       case 4:
         setVisibe4(!visible4);
+        break;
+      case 5:
+        setVisibe5(!visible5);
         break;
     }
   };
@@ -70,13 +67,24 @@ const LengthContent = () => {
           International System of Units {"("}SI{")"}, equal to one thousandth of
           a metre, which is the SI base unit of length. Therefore, there are one
           thousand millimetres in a metre. There are ten millimetres in a
-          centimetre.
+          centimetre.{" "}
+          {visible2 || (
+            <span
+              onClick={() => handleReadmore(2)}
+              className="convert-content-readmore"
+            >
+              Read more .....
+            </span>
+          )}
         </p>
-        <p className="span-convert-content">
-          One millimetre is equal to 1000 micrometres or 1000000 nanometres.
-          Since an inch is officially defined as exactly 25.4 millimetres, a
-          millimetre is equal to exactly 5⁄127 {"("}≈ 0.03937{")"} of an inch.
-        </p>
+        {visible2 && (
+          <p className="span-convert-content">
+            One millimetre is equal to 1000 micrometres or 1000000 nanometres.
+            Since an inch is officially defined as exactly 25.4 millimetres, a
+            millimetre is equal to exactly 5⁄127 {"("}≈ 0.03937{")"} of an inch.
+          </p>
+        )}
+
         <li className="li-convert-content">
           <h4>Feets:</h4>
         </li>
@@ -88,16 +96,16 @@ const LengthContent = () => {
           inches, and one yard comprises three feet. Since an international
           agreement in 1959, the foot is defined as equal to exactly 0.3048
           meters.{" "}
-          {visible2 || (
+          {visible3 || (
             <span
-              onClick={() => handleReadmore(2)}
+              onClick={() => handleReadmore(3)}
               className="convert-content-readmore"
             >
               Read more .....
             </span>
           )}
         </p>
-        {visible2 && (
+        {visible3 && (
           <>
             {" "}
             <p className="span-convert-content">
@@ -141,30 +149,44 @@ const LengthContent = () => {
           Since 2019 the metre has been defined as the length of the path
           travelled by light in vacuum during a time interval of 1 / 299792458
           of a second, where the second is defined by a hyperfine transition
-          frequency of caesium
+          frequency of caesium{" "}
+          {visible4 || (
+            <span
+              onClick={() => handleReadmore(4)}
+              className="convert-content-readmore"
+            >
+              Read more .....
+            </span>
+          )}
         </p>
-        <p className="span-convert-content">
-          The metre was originally defined in 1791 by the French National
-          Assembly as one ten-millionth of the distance from the equator to the
-          North Pole along a great circle, so the Earth's polar circumference is
-          approximately 40000 km.
-        </p>
-        <p className="span-convert-content">
-          In 1799, the metre was redefined in terms of a prototype metre bar,
-          the bar used was changed in 1889, and in 1960 the metre was redefined
-          in terms of a certain number of wavelengths of a certain emission line
-          of krypton-86. The current definition was adopted in 1983 and modified
-          slightly in 2002 to clarify that the metre is a measure of proper
-          length. From 1983 until 2019, the metre was formally defined as the
-          length of the path travelled by light in vacuum in 1 / 299792458 of a
-          second. After the 2019 redefinition of the SI base units, this
-          definition was rephrased to include the definition of a second in
-          terms of the caesium frequency ΔνCs. This series of amendments did not
-          alter the size of the metre significantly – today Earth's polar
-          circumference measures 40007.863 km, a change of 0.022% from the
-          original value of exactly 40000 km, which also includes improvements
-          in the accuracy of measuring the circumference.
-        </p>
+        {visible4 && (
+          <>
+            <p className="span-convert-content">
+              The metre was originally defined in 1791 by the French National
+              Assembly as one ten-millionth of the distance from the equator to
+              the North Pole along a great circle, so the Earth's polar
+              circumference is approximately 40000 km.
+            </p>
+            <p className="span-convert-content">
+              In 1799, the metre was redefined in terms of a prototype metre
+              bar, the bar used was changed in 1889, and in 1960 the metre was
+              redefined in terms of a certain number of wavelengths of a certain
+              emission line of krypton-86. The current definition was adopted in
+              1983 and modified slightly in 2002 to clarify that the metre is a
+              measure of proper length. From 1983 until 2019, the metre was
+              formally defined as the length of the path travelled by light in
+              vacuum in 1 / 299792458 of a second. After the 2019 redefinition
+              of the SI base units, this definition was rephrased to include the
+              definition of a second in terms of the caesium frequency ΔνCs.
+              This series of amendments did not alter the size of the metre
+              significantly – today Earth's polar circumference measures
+              40007.863 km, a change of 0.022% from the original value of
+              exactly 40000 km, which also includes improvements in the accuracy
+              of measuring the circumference.
+            </p>
+          </>
+        )}
+
         <li className="li-convert-content">
           <h4>Yards:</h4>
         </li>
@@ -175,9 +197,11 @@ const LengthContent = () => {
           standardized as exactly 0.9144 meter. A distance of 1,760 yards is
           equal to 1 mile.
         </p>
+
         <p className="span-convert-content">
           The US survey yard is very slightly longer.
         </p>
+
         <li className="li-convert-content">
           <h4>Miles:</h4>
         </li>
@@ -191,29 +215,41 @@ const LengthContent = () => {
           the United States by an international agreement in 1959, when it was
           formally redefined with respect to SI units as exactly 1,609.344
           metres.
+          {visible5 || (
+            <span
+              onClick={() => handleReadmore(5)}
+              className="convert-content-readmore"
+            >
+              Read more .....
+            </span>
+          )}
         </p>
-        <p className="span-convert-content">
-          With qualifiers, mile is also used to describe or translate a wide
-          range of units derived from or roughly equivalent to the Roman mile
-          {"("}roughly 1.48 km{")"}, such as the nautical mile {"("}now 1.852 km
-          exactly{")"}, the Italian mile {"("}roughly 1.852 km{")"}, and the
-          Chinese mile {"("}now 500 m exactly{")"}. The Romans divided their
-          mile into 5,000 pedēs {"("}"feet"{")"}, but the greater importance of
-          furlongs in the Elizabethan-era England meant that the statute mile
-          was made equivalent to 8 furlongs or 5,280 feet in 1593. This form of
-          the mile then spread across the British Empire, some successor states
-          of which continue to employ the mile. The US Geological Survey now
-          employs the metre for official purposes, but legacy data from its 1927
-          geodetic datum has meant that a separate US survey mile {"("} 6336 /
-          3937 km{")"}continues to see some use, although it was officially
-          phased out in 2022. While most countries replaced the mile with the
-          kilometre when switching to the International System of Units {"("}SI
-          {")"}, the international mile continues to be used in some countries,
-          such as Liberia, the United Kingdom, the United States, and a number
-          of countries with fewer than one million inhabitants, most of which
-          are UK or US territories or have close historical ties with the UK or
-          US.
-        </p>
+        {visible5 && (
+          <p className="span-convert-content">
+            With qualifiers, mile is also used to describe or translate a wide
+            range of units derived from or roughly equivalent to the Roman mile
+            {"("}roughly 1.48 km{")"}, such as the nautical mile {"("}now 1.852
+            km exactly{")"}, the Italian mile {"("}roughly 1.852 km{")"}, and
+            the Chinese mile {"("}now 500 m exactly{")"}. The Romans divided
+            their mile into 5,000 pedēs {"("}"feet"{")"}, but the greater
+            importance of furlongs in the Elizabethan-era England meant that the
+            statute mile was made equivalent to 8 furlongs or 5,280 feet in
+            1593. This form of the mile then spread across the British Empire,
+            some successor states of which continue to employ the mile. The US
+            Geological Survey now employs the metre for official purposes, but
+            legacy data from its 1927 geodetic datum has meant that a separate
+            US survey mile {"("} 6336 / 3937 km{")"}
+            continues to see some use, although it was officially phased out in
+            2022. While most countries replaced the mile with the kilometre when
+            switching to the International System of Units {"("}SI
+            {")"}, the international mile continues to be used in some
+            countries, such as Liberia, the United Kingdom, the United States,
+            and a number of countries with fewer than one million inhabitants,
+            most of which are UK or US territories or have close historical ties
+            with the UK or US.
+          </p>
+        )}
+
         <li className="li-convert-content">
           <h4>Kilometers:</h4>
         </li>

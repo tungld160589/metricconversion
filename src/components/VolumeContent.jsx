@@ -1,4 +1,14 @@
+import { useState } from "react";
 const VolumeContent = () => {
+  const [visible1, setVisibe1] = useState(false);
+
+  const handleReadmore = (option) => {
+    switch (option) {
+      case 1:
+        setVisibe1(!visible1);
+        break;
+    }
+  };
   return (
     <>
       <ul className="ul-convert-content">
@@ -48,27 +58,42 @@ const VolumeContent = () => {
           {")"}. A cubic decimetre {"("}or litre{")"} occupies a volume of 10 cm
           × 10 cm × 10 cm {"("}see figure
           {")"} and is thus equal to one-thousandth of a cubic metre.
+          {visible1 || (
+            <span
+              onClick={() => handleReadmore(1)}
+              className="convert-content-readmore"
+            >
+              Read more .....
+            </span>
+          )}
         </p>
-        <p className="span-convert-content">
-          The original French metric system used the litre as a base unit. The
-          word litre is derived from an older French unit, the litron, whose
-          name came from Byzantine Greek—where it was a unit of weight, not
-          volume—via Late Medieval Latin, and which equalled approximately 0.831
-          litres. The litre was also used in several subsequent versions of the
-          metric system and is accepted for use with the SI, although not an SI
-          unit—the SI unit of volume is the cubic metre {"("}m<sup>3</sup>
-          {")"}. The spelling used by the International Bureau of Weights and
-          Measures is "litre", a spelling which is shared by most
-          English-speaking countries. The spelling "liter" is predominantly used
-          in American English.
-        </p>
-        <p className="span-convert-content">
-          One litre of liquid water has a mass of almost exactly one kilogram,
-          because the kilogram was originally defined in 1795 as the mass of one
-          cubic decimetre of water at the temperature of melting ice {"("}0 °C
-          {")"}. Subsequent redefinitions of the metre and kilogram mean that
-          this relationship is no longer exact.
-        </p>
+        {visible1 && (
+          <>
+            <p className="span-convert-content">
+              The original French metric system used the litre as a base unit.
+              The word litre is derived from an older French unit, the litron,
+              whose name came from Byzantine Greek—where it was a unit of
+              weight, not volume—via Late Medieval Latin, and which equalled
+              approximately 0.831 litres. The litre was also used in several
+              subsequent versions of the metric system and is accepted for use
+              with the SI, although not an SI unit—the SI unit of volume is the
+              cubic metre {"("}m<sup>3</sup>
+              {")"}. The spelling used by the International Bureau of Weights
+              and Measures is "litre", a spelling which is shared by most
+              English-speaking countries. The spelling "liter" is predominantly
+              used in American English.
+            </p>
+            <p className="span-convert-content">
+              One litre of liquid water has a mass of almost exactly one
+              kilogram, because the kilogram was originally defined in 1795 as
+              the mass of one cubic decimetre of water at the temperature of
+              melting ice {"("}0 °C
+              {")"}. Subsequent redefinitions of the metre and kilogram mean
+              that this relationship is no longer exact.
+            </p>
+          </>
+        )}
+
         <li className="li-convert-content">
           <h4>Cubic Feets:</h4>
         </li>
