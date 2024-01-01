@@ -1,7 +1,37 @@
+import { useState } from "react";
 const LengthContent = () => {
+  const [visible, setVisible] = useState([]);
+  const [visible1, setVisibe1] = useState(false);
+  const [visible2, setVisibe2] = useState(false);
+  const [visible3, setVisibe3] = useState(false);
+  const [visible4, setVisibe4] = useState(false);
+  const toggleReadMore = (index) => {
+    setVisible((prevContent) => {
+      const newContent = [...prevContent];
+      newContent[index] = !newContent[index];
+      return newContent;
+    });
+  };
+  const handleReadmore = (option) => {
+    switch (option) {
+      case 1:
+        setVisibe1(!visible1);
+        break;
+      case 2:
+        setVisibe2(!visible2);
+        break;
+      case 3:
+        setVisibe3(!visible3);
+        break;
+      case 4:
+        setVisibe4(!visible4);
+        break;
+    }
+  };
+
   return (
     <>
-      <ul className="ul-convert-content">
+      <ul className="ul-convert-content" id="ul-convert-content">
         <li className="li-convert-content">
           <h4>Inchs:</h4>
         </li>
@@ -11,14 +41,26 @@ const LengthContent = () => {
           equal to 1 / 36 yard or 1 / 12 of a foot. Derived from the Roman uncia
           {"("}"twelfth"{")"}, the word inch is also sometimes used to translate
           similar units in other measurement systems, usually understood as
-          deriving from the width of the human thumb.
+          deriving from the width of the human thumb.{" "}
+          {visible1 || (
+            <span
+              onClick={() => handleReadmore(1)}
+              className="convert-content-readmore"
+            >
+              Read more .....
+            </span>
+          )}
         </p>
-        <p className="span-convert-content">
-          Standards for the exact length of an inch have varied in the past, but
-          since the adoption of the international yard during the 1950s and
-          1960s the inch has been based on the metric system and defined as
-          exactly 25.4 mm.
-        </p>
+
+        {visible1 && (
+          <p className="span-convert-content">
+            Standards for the exact length of an inch have varied in the past,
+            but since the adoption of the international yard during the 1950s
+            and 1960s the inch has been based on the metric system and defined
+            as exactly 25.4 mm.
+          </p>
+        )}
+
         <li className="li-convert-content">
           <h4>Milimeters:</h4>
         </li>
@@ -45,36 +87,51 @@ const LengthContent = () => {
           foot. In both customary and imperial units, one foot comprises 12
           inches, and one yard comprises three feet. Since an international
           agreement in 1959, the foot is defined as equal to exactly 0.3048
-          meters.
+          meters.{" "}
+          {visible2 || (
+            <span
+              onClick={() => handleReadmore(2)}
+              className="convert-content-readmore"
+            >
+              Read more .....
+            </span>
+          )}
         </p>
-        <p className="span-convert-content">
-          Historically, the "foot" was a part of many local systems of units,
-          including the Greek, Roman, Chinese, French, and English systems. It
-          varied in length from country to country, from city to city, and
-          sometimes from trade to trade. Its length was usually between 250 mm
-          and 335 mm and was generally, but not always, subdivided into 12
-          inches or 16 digits.
-        </p>
-        <p className="span-convert-content">
-          The United States is the only industrialized country that uses the
-          {"("}international{")"} foot in preference to the meter in its
-          commercial, engineering, and standards activities. The foot is legally
-          recognized in the United Kingdom; road distance signs must use
-          imperial units {"("}however, distances on road signs are always marked
-          in miles or yards, not feet; bridge clearances are given in meters as
-          well as feet and inches{")"}, while its usage is widespread among the
-          British public as a measurement of height. The foot is recognized as
-          an alternative expression of length in Canada. Both the UK and Canada
-          have partially metricated their units of measurement. The measurement
-          of altitude in international aviation
-          {"("}the flight level unit{")"} is one of the few areas where the foot
-          is used outside the English-speaking world.
-        </p>
-        <p className="span-convert-content">
-          The length of the {"("}international{")"} foot corresponds to a human
-          foot with shoe size of 13 {"("}UK{")"}, 14 {"("}US male{")"}, 15.5{" "}
-          {"("}US female{")"} or 48 {"("}EU sizing{")"}.
-        </p>
+        {visible2 && (
+          <>
+            {" "}
+            <p className="span-convert-content">
+              Historically, the "foot" was a part of many local systems of
+              units, including the Greek, Roman, Chinese, French, and English
+              systems. It varied in length from country to country, from city to
+              city, and sometimes from trade to trade. Its length was usually
+              between 250 mm and 335 mm and was generally, but not always,
+              subdivided into 12 inches or 16 digits.
+            </p>
+            <p className="span-convert-content">
+              The United States is the only industrialized country that uses the
+              {"("}international{")"} foot in preference to the meter in its
+              commercial, engineering, and standards activities. The foot is
+              legally recognized in the United Kingdom; road distance signs must
+              use imperial units {"("}however, distances on road signs are
+              always marked in miles or yards, not feet; bridge clearances are
+              given in meters as well as feet and inches{")"}, while its usage
+              is widespread among the British public as a measurement of height.
+              The foot is recognized as an alternative expression of length in
+              Canada. Both the UK and Canada have partially metricated their
+              units of measurement. The measurement of altitude in international
+              aviation
+              {"("}the flight level unit{")"} is one of the few areas where the
+              foot is used outside the English-speaking world.
+            </p>
+            <p className="span-convert-content">
+              The length of the {"("}international{")"} foot corresponds to a
+              human foot with shoe size of 13 {"("}UK{")"}, 14 {"("}US male{")"}
+              , 15.5 {"("}US female{")"} or 48 {"("}EU sizing{")"}.
+            </p>
+          </>
+        )}
+
         <li className="li-convert-content">
           <h4>Meters:</h4>
         </li>

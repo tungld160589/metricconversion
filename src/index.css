@@ -473,6 +473,12 @@ a {
 .span-convert-content {
   margin-bottom: 20px;
 }
+.convert-content-readmore {
+  color: #03a9f4;
+  font-weight: 500;
+  font-style: italic;
+  cursor: pointer;
+}
 /*------------------------------------------------------------------*/
 /* Article*/
 .Art {
