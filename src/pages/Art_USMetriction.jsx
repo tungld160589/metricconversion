@@ -11,8 +11,9 @@ const Art_USMetriction = () => {
         <Nav />
       </div>
       <div className="Art">
-        <p>Article-U.S Metriction</p>
-        {/* <input className="Art-Search" type="text" placeholder="Enter Article" /> */}
+        <a href="./Article">Article-US Metriction</a>
+
+
       </div>
       <div className="Art-Unit">
         <div>
