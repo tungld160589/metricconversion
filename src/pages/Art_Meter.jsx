@@ -11,8 +11,9 @@ const Art_Meter = () => {
         <Nav />
       </div>
       <div className="Art">
-        <p>Article-The Meter</p>
-        {/* <input className="Art-Search" type="text" placeholder="Enter Article" /> */}
+        <a href="./Article">Article-The Meter</a>
+
+
       </div>
       <div className="Art-Unit">
         <div>
@@ -29,8 +30,8 @@ const Art_Meter = () => {
       <div className="Us_In">
         <h5>
           <p className="US1">The meter, a fundamental unit of length in the metric system, has
-          undergone a historical evolution in its definition, reflecting efforts
-          to establish a universally consistent and precise standard.</p>
+            undergone a historical evolution in its definition, reflecting efforts
+            to establish a universally consistent and precise standard.</p>
         </h5>
       </div>
       <div className="Us">
@@ -38,11 +39,11 @@ const Art_Meter = () => {
         <br />
         <h5>1. French Revolution and Prototype:</h5>
         <p className="US1">The metric system, introduced during the French Revolution in the late
-        18th century, aimed to create a decimal-based system of measurement. The
-        original definition of the meter, established in 1799, was based on a
-        fraction of the Earth's circumference. However, practical challenges in
-        measurement led to the creation of a physical prototype known as the
-        International Prototype of the Meter (IPM) in 1889.</p> <br />
+          18th century, aimed to create a decimal-based system of measurement. The
+          original definition of the meter, established in 1799, was based on a
+          fraction of the Earth's circumference. However, practical challenges in
+          measurement led to the creation of a physical prototype known as the
+          International Prototype of the Meter (IPM) in 1889.</p> <br />
         <h5>2. Wavelength of Light:</h5>
         In 1960, the meter underwent a significant redefinition based on the
         wavelength of a specific spectral line of krypton-86. This provided a
@@ -56,11 +57,11 @@ const Art_Meter = () => {
         <br />
         <h5>1. Speed of Light:</h5>
         <p className="US1">The current and widely accepted definition of the meter is based on the
-        speed of light in a vacuum. This redefinition occurred in 1983,
-        establishing the meter as the distance that light travels in a vacuum
-        during 1/299,792,458 seconds. This definition ties the meter to a
-        fundamental constant of nature, ensuring precision, reproducibility, and
-        global uniformity.</p>
+          speed of light in a vacuum. This redefinition occurred in 1983,
+          establishing the meter as the distance that light travels in a vacuum
+          during 1/299,792,458 seconds. This definition ties the meter to a
+          fundamental constant of nature, ensuring precision, reproducibility, and
+          global uniformity.</p>
       </div>
 
       <div className="Us">
@@ -68,31 +69,31 @@ const Art_Meter = () => {
         <br />
         <h5>1.Scientific Research:</h5>
         <p className="US1">The meter is crucial in scientific research across various disciplines.
-        In physics, astronomy, and other fields, precise measurements are
-        essential, and the standardized definition of the meter contributes to
-        the accuracy of experiments and observations.</p> <br />
+          In physics, astronomy, and other fields, precise measurements are
+          essential, and the standardized definition of the meter contributes to
+          the accuracy of experiments and observations.</p> <br />
 
         <h5>2.Technological and Industrial Applications:</h5>
         <p className="US1">In technology and industry, the meter is a key unit for measurements in
-        manufacturing, construction, engineering, and other applications. The
-        standardized definition facilitates consistency and interoperability in international trade and collaboration</p>
-         <br />
+          manufacturing, construction, engineering, and other applications. The
+          standardized definition facilitates consistency and interoperability in international trade and collaboration</p>
+        <br />
         <h5>3.Everyday Use:</h5>
         <p className="US1">The meter is a familiar unit in daily life for measuring distances,
-        dimensions, and sizes. From construction and home improvement to sports
-        and leisure activities, the meter provides a common reference for length measurements.</p>
-        
+          dimensions, and sizes. From construction and home improvement to sports
+          and leisure activities, the meter provides a common reference for length measurements.</p>
+
       </div>
 
       <div className="Us">
         <h3>Conclusion:</h3>
         <br />
         <p className="US1">The evolution of the meter from its historical origins in the French
-        Revolution to its contemporary definition based on the speed of light
-        highlights the pursuit of precision and universality in measurement
-        standards. The current definition, integrated into the International
-        System of Units (SI), ensures that the meter remains a reliable and
-        consistent.</p>
+          Revolution to its contemporary definition based on the speed of light
+          highlights the pursuit of precision and universality in measurement
+          standards. The current definition, integrated into the International
+          System of Units (SI), ensures that the meter remains a reliable and
+          consistent.</p>
       </div>
 
       <div className="btnback">
