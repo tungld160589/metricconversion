@@ -60,9 +60,9 @@ const TypeofConvers = (props) => {
         />
         {searchTerm && (
           <div className="resultSearch">
-            {state.map((rs) => (
+            {state.map((rs, index) => (
               <Link to={`/${rs.type}`}>
-                <div>{rs.nameOfUnit}</div>
+                <div key={index}>{rs.nameOfUnit}</div>
               </Link>
             ))}
           </div>
