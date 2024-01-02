@@ -619,7 +619,7 @@ a {
 .txt-aboutus-group {
   flex-basis: 60%;
 }
-.txt-aboutus-group p:last-child {
+.txt-aboutus-group p {
   font-size: 18px;
   font-style: normal;
 }

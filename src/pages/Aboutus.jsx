@@ -53,32 +53,31 @@ const Aboutus = () => {
                 <p className="txt-title-content-aboutus">
                   What Sets Us Apart:{" "}
                 </p>
-                <p>
-                  <p style={{ marginBottom: 10 }}>
-                    <p className="txt-aboutus-strong">Innovation: </p>
-                    We constantly strive to incorporate the latest technologies
-                    and methodologies to enhance the user experience. Our
-                    commitment to innovation drives us to stay at the forefront
-                    of the ever-evolving tech landscape.
-                  </p>
+
+                <p style={{ marginBottom: 10 }}>
+                  <span className="txt-aboutus-strong">Innovation: </span>
+                  We constantly strive to incorporate the latest technologies
+                  and methodologies to enhance the user experience. Our
+                  commitment to innovation drives us to stay at the forefront of
+                  the ever-evolving tech landscape.
                 </p>
-                <p>
-                  <p style={{ marginBottom: 10 }}>
-                    <p className="txt-aboutus-strong">User-Centric Design: </p>
-                    Our team places a strong emphasis on user-centric design. We
-                    believe that technology should be intuitive and
-                    user-friendly, ensuring that our platform is accessible to
-                    individuals with varying levels of technical expertise.
-                  </p>
+
+                <p style={{ marginBottom: 10 }}>
+                  <span className="txt-aboutus-strong">
+                    User-Centric Design:{" "}
+                  </span>
+                  Our team places a strong emphasis on user-centric design. We
+                  believe that technology should be intuitive and user-friendly,
+                  ensuring that our platform is accessible to individuals with
+                  varying levels of technical expertise.
                 </p>
-                <p>
-                  <p style={{ marginBottom: 10 }}>
-                    <p className="txt-aboutus-strong">Collaboration: </p>
-                    Group04 operates on the principles of collaboration and
-                    teamwork. Each member brings a unique set of skills and
-                    perspectives, fostering an environment where creativity
-                    thrives and solutions flourish.
-                  </p>
+
+                <p style={{ marginBottom: 10 }}>
+                  <span className="txt-aboutus-strong">Collaboration: </span>
+                  Group04 operates on the principles of collaboration and
+                  teamwork. Each member brings a unique set of skills and
+                  perspectives, fostering an environment where creativity
+                  thrives and solutions flourish.
                 </p>
               </div>
             </div>
