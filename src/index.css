@@ -692,7 +692,7 @@ a {
   align-items: center;
   row-gap: 10px;
 }
-.aboutus-form input {
+.aboutus-form-input {
   height: 30px;
   border-radius: 5px;
   border: #fcaf26;

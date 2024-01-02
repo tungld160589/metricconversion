@@ -134,13 +134,26 @@ const Aboutus = () => {
           <div className="txt-aboutus-head-profile">Contact Us</div>
           <div className="aboutus-form">
             <label>First Name: </label>
-            <input type="text" name="" id="" placeholder="Enter First Name" />
+            <input
+              className="aboutus-form-input"
+              type="text"
+              name=""
+              id=""
+              placeholder="Enter First Name"
+            />
 
             <label>Last Name: </label>
-            <input type="text" name="" id="" placeholder="Enter Last Name" />
+            <input
+              className="aboutus-form-input"
+              type="text"
+              name=""
+              id=""
+              placeholder="Enter Last Name"
+            />
 
             <label>Your Email: </label>
             <input
+              className="aboutus-form-input"
               type="email"
               name="txtemail"
               id="txtemail"
