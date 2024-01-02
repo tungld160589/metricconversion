@@ -27,8 +27,8 @@ const ClickToTop = () => {
       style={{ display: visible ? "block" : "none" }}
       onClick={handleButtonClick}
     >
-      <button className="back-to-top-btn">&and;</button>
-      <p className="txt-back-to-top">Back to Top</p>
+      <button className="back-to-top-btn">&#11165;</button>
+      <p className="txt-back-to-top">BACK TO TOP</p>
     </div>
   );
 };
