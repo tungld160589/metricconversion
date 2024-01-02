@@ -20,7 +20,7 @@ const Faqs = (dataFaqs) => {
           </div>
         </div>
         {answersVisible[index] && (
-          <div className="answer-container">{faqs.answer}</div>
+          <div className="answer-container">{faqs.answer}<span>Read more ...</span></div>
         )}
       </div>
     </div>
