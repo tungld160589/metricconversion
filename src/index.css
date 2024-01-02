@@ -494,6 +494,11 @@ a {
   line-height: 17px;
   justify-content: space-between;
   position: relative;
+  
+}
+.Art a {
+  text-decoration: none;
+  color: black;
 }
 .Art-Search {
   box-sizing: border-box;
