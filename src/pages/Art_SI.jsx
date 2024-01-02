@@ -4,8 +4,11 @@ import SI1 from "../img/SI1.png";
 import SI2 from "../img/SI2.png";
 import { Link } from "react-router-dom";
 import ClickToTop from "../components/ClickToTop";
-
+import { useEffect } from "react";
 const Art_SI = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div>

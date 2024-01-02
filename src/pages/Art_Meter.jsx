@@ -3,8 +3,11 @@ import Footer from "../components/Footer";
 import Meter1 from "../img/Meter1.png";
 import { Link } from "react-router-dom";
 import ClickToTop from "../components/ClickToTop";
-
+import { useEffect } from "react";
 const Art_Meter = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div>

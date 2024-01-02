@@ -4,7 +4,11 @@ import DataLogo from "../img/Data.png";
 import ConvertGraph from "../components/ConvertGraph";
 import DataContent from "../components/DataContent";
 import ClickToTop from "../components/ClickToTop";
+import { useEffect } from "react";
 const DataConvert = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div>

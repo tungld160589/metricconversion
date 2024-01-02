@@ -4,7 +4,11 @@ import ConvertGraph from "../components/ConvertGraph";
 import CurrencyLogo from "../img/Currency-icon.jpg";
 import CurremcyContent from "../components/CurencyContent";
 import ClickToTop from "../components/ClickToTop";
+import { useEffect } from "react";
 const CurrencyConvert = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div>

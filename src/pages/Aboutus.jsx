@@ -6,7 +6,11 @@ import Outmission from "../img/OutMission.jpg";
 import WhatSetsUsApart from "../img/WhatSetsUsApart.jpg";
 import tungjpg from "../img/Tung.jpg";
 import nguyenimg from "../img/Nguyen-img.jpg";
+import { useEffect } from "react";
 const Aboutus = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div>

@@ -6,10 +6,13 @@ import Faqs from "../components/Faqs";
 import Logo from "../img/Logo.png";
 import FAQsList from "../Data/FAQsList.json";
 import ClickToTop from "../components/ClickToTop";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Home = () => {
   const [state, setState] = useState(FAQsList);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="container">
       <nav>

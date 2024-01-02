@@ -4,7 +4,11 @@ import ConvertGraph from "../components/ConvertGraph";
 import TemperatureLogo from "../img/Temperature.png";
 import TemperatureContent from "../components/TemperatureContent";
 import ClickToTop from "../components/ClickToTop";
+import { useEffect } from "react";
 const TemperatureConvert = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div>

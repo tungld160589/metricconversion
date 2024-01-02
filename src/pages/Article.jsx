@@ -4,7 +4,7 @@ import US from "../img/US Metriction.png";
 import meter from "../img/Meter.png";
 import Metric from "../img/Metric.png";
 import Si from "../img/SI.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ArticleThumb from "../components/ArticleThumb";
 import ClickToTop from "../components/ClickToTop";
 export const ArticlesThumbList = [
@@ -40,6 +40,11 @@ export const ArticlesThumbList = [
 
 const Article = () => {
   const [state, setState] = useState(ArticlesThumbList);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const searchHandler = (e) => {
     let txt = e.target.value.toLowerCase();
     let result = ArticlesThumbList.filter((rs) => {
