@@ -10,8 +10,10 @@ const Art_USMetriction = () => {
       <div>
         <Nav />
       </div>
-      <div className="Art">
-        <a href="./Article">Article-US Metriction</a>
+      <div className="Art1">
+        <div className="Art2"> <a href="./Article">Article-</a></div>
+       
+        <div className="Art2">US Metriction</div>
 
 
       </div>
