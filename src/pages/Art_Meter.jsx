@@ -10,8 +10,10 @@ const Art_Meter = () => {
       <div>
         <Nav />
       </div>
-      <div className="Art">
-        <a href="./Article">Article-The Meter</a>
+      <div className="Art1">
+        <div className="Art2"> <a href="./Article">Article-</a></div>
+       
+        <div className="Art2">The Meter</div>
 
 
       </div>
