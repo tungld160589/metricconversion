@@ -11,8 +11,10 @@ const Art_SI = () => {
       <div>
         <Nav />
       </div>
-      <div className="Art">
-        <a href="./Article">Article-SI System</a>
+      <div className="Art1">
+        <div className="Art2"> <a href="./Article">Article-</a></div>
+       
+        <div className="Art2">SI System</div>
 
 
       </div>
