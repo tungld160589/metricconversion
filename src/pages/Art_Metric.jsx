@@ -10,8 +10,10 @@ const Art_Metric = () => {
       <div>
         <Nav />
       </div>
-      <div className="Art">
-        <a href="./Article">Article-Metric System</a>
+      <div className="Art1">
+        <div className="Art2"> <a href="./Article">Article-</a></div>
+
+        <div className="Art2">The Metric</div>
       </div>
       <div className="Art-Unit">
         <div>
