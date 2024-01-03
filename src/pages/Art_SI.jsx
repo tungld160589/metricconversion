@@ -16,7 +16,7 @@ const Art_SI = () => {
       </div>
       <div className="Art">
         <p>Article- SI Units</p>
-        <input className="Art-Search" type="text" placeholder="Enter Article" />
+        {/* <input className="Art-Search" type="text" placeholder="Enter Article" /> */}
       </div>
       <div className="Art-Unit">
         <div>
