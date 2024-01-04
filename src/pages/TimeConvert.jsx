@@ -4,7 +4,11 @@ import ConvertGraph from "../components/ConvertGraph";
 import TimeLogo from "../img/Time.png";
 import ClickToTop from "../components/ClickToTop";
 import TimeContent from "../components/TimeContent";
+import { useEffect } from "react";
 const TimeConvert = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div>

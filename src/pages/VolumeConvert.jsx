@@ -4,7 +4,11 @@ import ConvertGraph from "../components/ConvertGraph";
 import VolumeLogo from "../img/Volume.png";
 import VolumeContent from "../components/VolumeContent";
 import ClickToTop from "../components/ClickToTop";
+import { useEffect } from "react";
 const VolumeConvert = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div>

@@ -4,7 +4,11 @@ import ConvertGraph from "../components/ConvertGraph";
 import Arealogo from "../img/Area.png";
 import AreaContent from "../components/AreaContent";
 import ClickToTop from "../components/ClickToTop";
+import { useEffect } from "react";
 const AreaConvert = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div>

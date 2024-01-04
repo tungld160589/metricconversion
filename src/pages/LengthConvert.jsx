@@ -4,7 +4,11 @@ import LengthLogo from "../img/Lenght.png";
 import ConvertGraph from "../components/ConvertGraph";
 import LenghtContent from "../components/LengthContent";
 import ClickToTop from "../components/ClickToTop";
+import { useEffect } from "react";
 const LengthConvert = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div>
