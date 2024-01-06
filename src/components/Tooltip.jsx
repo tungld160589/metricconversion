@@ -6,7 +6,6 @@ const Tooltip = (props) => {
         <p className="tooltip-alert">&#x26A0;</p>
         <p>{text}</p>
       </div>
-
       <i></i>
     </div>
   );

@@ -2,6 +2,8 @@ import ConvertChangeIMG from "../img/preview.png";
 import ConvertList from "../Data/ConvertList.json";
 import { useState } from "react";
 import FactorList from "../Data/FactorList.json";
+import Tooltip from "./Tooltip";
+
 const ConvertGraph = (props) => {
   const [convertunit, setConvertUnit] = useState(ConvertList);
   const { sortby } = props;
@@ -16,6 +18,10 @@ const ConvertGraph = (props) => {
   const [txtChooseLeft, settxtChooseLeft] = useState();
   const [IDSelectLeft, setIDSelectLeft] = useState();
   const [IDSelectRight, setIDSelectRight] = useState();
+  const [txtToolTip, setTxtToolTip] = useState();
+  const [visibleToolTip, setVisibleToolTip] = useState(false);
+  const [statusL, setStatusL] = useState(false);
+  const [statusR, setStatusR] = useState(false);
 
   const selectOptionL = (option) => {
     setSelectedOption(option.nameOfUnit);
@@ -26,50 +32,76 @@ const ConvertGraph = (props) => {
     setSelectOptionRight(option.nameOfUnit);
     setListVisibleRight(false);
   };
-
+  //Khi Clich vào để hiện danh sách bên Trái
   const toggleListL = () => {
     setListVisibleLeft(!listVisibleLeft);
+    //Kiểm tra trạng thái hiển thị của ToolTip nếu true thì trả về false
+    if (visibleToolTip) {
+      setVisibleToolTip(!visibleToolTip);
+    }
+    //Thực hiện filter theo giá trị sortby để tạo list lựa chọn
     let sortlist = convertunit.filter((rs) => {
       let search = rs.type.toLowerCase();
       return search.indexOf(sortby) !== -1;
     });
+
     setleftList(sortlist);
   };
-
+  // Khi Click vào để hiện danh sách bên phải
   const toggleListR = () => {
     setListVisibleRight(!listVisibleRight);
+    //Kiểm tra trạng thái hiển thị của ToolTip nếu true thì trả về false
+    if (visibleToolTip) {
+      setVisibleToolTip(!visibleToolTip);
+    }
   };
-
+  // Khi Lựa Chọn Danh Sách Bên Trái
   const handleClickLeft = (option) => {
     settxtChooseLeft(option.nameOfUnit);
     setIDSelectLeft(option.id);
+    setStatusL(!statusL);
     calOutput(option.id, IDSelectRight, inputLeft);
   };
-
+  //Khi Lựa Chọn Danh Sách Bên Phải
   const handleClickRight = (option) => {
     setIDSelectRight(option.id);
     settxtChooseRight(option.nameOfUnit);
+    setStatusR(!statusR);
     calOutput(option.id, IDSelectLeft, inputLeft);
   };
-
+  // Hàm nhân giá trị input với hệ số chuyển đổi nếu input notnull
   const calOutput = (a, b, c) => {
     if (c) {
       let result = c * Factor(a, b);
       setOutputRight(result);
     }
   };
-
+  //Hàm lấy hệ số chuyển đổi
   const Factor = (a, b) => {
     let id = a + b;
     const FactorNum = FactorList.find((item) => item.id === id);
     return FactorNum.factor;
   };
-
+  //Khi thay đổi giá trị input
   const onChangeLeft = (e) => {
     let tempvalue = e.target.value;
     let a = tempvalue * Factor(IDSelectLeft, IDSelectRight);
     setOutputRight(a);
     setInputLeft(tempvalue);
+  };
+  //Khi lick vào ô input mà chưa lựa chọn giá trị chuyển đổi trái phải
+  const handleClickInputLeft = () => {
+    if (!statusR) {
+      if (!statusL) {
+        setTxtToolTip(
+          `"Please choose "Unit convert from" and "Unit convert to"`
+        );
+        setVisibleToolTip(!visibleToolTip);
+      } else {
+        setTxtToolTip("Please choose Unit convert to");
+        setVisibleToolTip(!visibleToolTip);
+      }
+    }
   };
 
   return (
@@ -100,13 +132,19 @@ const ConvertGraph = (props) => {
                 )}
               </div>
             </div>
-
-            <input
-              className={`input-left ${IDSelectRight || "lock"}`}
-              type="number"
-              value={inputLeft}
-              onChange={onChangeLeft}
-            />
+            <div className="tooltip" onClick={handleClickInputLeft}>
+              <input
+                className={`input-left ${IDSelectRight || "lock"}`}
+                type="number"
+                value={inputLeft}
+                onChange={onChangeLeft}
+              />
+              {visibleToolTip && (
+                <div>
+                  <Tooltip text={txtToolTip} />
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <div className="bg-convert-right-control">
