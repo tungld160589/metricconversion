@@ -756,6 +756,7 @@ a {
   border-radius: 5px;
   border: #fcaf26;
   text-align: center;
+  width: 250px;
 }
 .btn-control-aboutus {
   grid-column: 1 / span 2;
@@ -777,6 +778,63 @@ a {
   background-color: #fff;
 }
 .error-div-form-aboutus {
-  grid-column: 1 / span 2;
-  text-align: center;
+  font-size: 13px;
+  color: red;
+  font-weight: normal;
+  font-style: normal;
+}
+/*--------------------*/
+.tooltip {
+  position: relative;
+}
+
+.bottom {
+  min-width: 250px;
+  top: 35px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 1px 10px;
+  color: red;
+  background-color: #ffffff;
+  font-weight: normal;
+  font-size: 14px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 99999999;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  /* display: none; */
+}
+.tooltip .bottom i {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.tooltip .bottom i::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+  background-color: #ffffff;
+  border: 1px solid #aaaaaa;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+.bottom-tooltip-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.tooltip-alert {
+  color: red;
+  font-size: 30px;
+  font-weight: 600;
 }
