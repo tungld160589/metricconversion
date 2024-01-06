@@ -38,7 +38,8 @@ const LengthContent = () => {
           equal to 1 / 36 yard or 1 / 12 of a foot. Derived from the Roman uncia
           {"("}"twelfth"{")"}, the word inch is also sometimes used to translate
           similar units in other measurement systems, usually understood as
-          deriving from the width of the human thumb.{" "}
+          deriving from the width of the human thumb.
+          <br />
           {visible1 || (
             <span
               onClick={() => handleReadmore(1)}
@@ -67,7 +68,8 @@ const LengthContent = () => {
           International System of Units {"("}SI{")"}, equal to one thousandth of
           a metre, which is the SI base unit of length. Therefore, there are one
           thousand millimetres in a metre. There are ten millimetres in a
-          centimetre.{" "}
+          centimetre.
+          <br />
           {visible2 || (
             <span
               onClick={() => handleReadmore(2)}
@@ -95,7 +97,8 @@ const LengthContent = () => {
           foot. In both customary and imperial units, one foot comprises 12
           inches, and one yard comprises three feet. Since an international
           agreement in 1959, the foot is defined as equal to exactly 0.3048
-          meters.{" "}
+          meters.
+          <br />
           {visible3 || (
             <span
               onClick={() => handleReadmore(3)}
@@ -149,7 +152,8 @@ const LengthContent = () => {
           Since 2019 the metre has been defined as the length of the path
           travelled by light in vacuum during a time interval of 1 / 299792458
           of a second, where the second is defined by a hyperfine transition
-          frequency of caesium{" "}
+          frequency of caesium
+          <br />
           {visible4 || (
             <span
               onClick={() => handleReadmore(4)}
@@ -215,6 +219,7 @@ const LengthContent = () => {
           the United States by an international agreement in 1959, when it was
           formally redefined with respect to SI units as exactly 1,609.344
           metres.
+          <br />
           {visible5 || (
             <span
               onClick={() => handleReadmore(5)}

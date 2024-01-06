@@ -40,7 +40,7 @@ const TimeContent = () => {
           International System of Units {"("}SI{")"}, historically defined as
           1⁄86400 of a day – this factor derived from the division of the day
           first into 24 hours, then to 60 minutes and finally to 60 seconds each{" "}
-          {"("}24 × 60 × 60 = 86400{")"}.
+          {"("}24 × 60 × 60 = 86400{")"}.<br />
           {visible1 || (
             <span
               onClick={() => handleReadmore(1)}
@@ -69,6 +69,7 @@ const TimeContent = () => {
           historically reckoned as 1⁄24 of a day and defined contemporarily as
           exactly 3,600 seconds {"("}SI{")"}. There are 60 minutes in an hour,
           and 24 hours in a day.
+          <br />
           {visible2 || (
             <span
               onClick={() => handleReadmore(2)}
@@ -115,7 +116,8 @@ const TimeContent = () => {
           to the Sun. On average, this is 24 hours {"("}86,400 seconds{")"}. As
           a day passes at a given location it experiences morning, noon,
           afternoon, evening, and night. This daily cycle drives circadian
-          rhythms in many organisms, which are vital to many life processes.{" "}
+          rhythms in many organisms, which are vital to many life processes.
+          <br />
           {visible3 || (
             <span
               onClick={() => handleReadmore(3)}
@@ -175,6 +177,7 @@ const TimeContent = () => {
           well as days of worship. Weeks are often mapped against yearly
           calendars, but are typically not the basis for them, as weeks are not
           based on astronomy.
+          <br />
           {visible4 || (
             <span
               onClick={() => handleReadmore(4)}
@@ -227,7 +230,7 @@ const TimeContent = () => {
           Moon's phases as early as the Paleolithic age. Synodic months, based
           on the Moon's orbital period with respect to the Earth–Sun line, are
           still the basis of many calendars today and are used to divide the
-          year.
+          year. <br />
           {visible5 || (
             <span
               onClick={() => handleReadmore(5)}
@@ -262,7 +265,7 @@ const TimeContent = () => {
           year, but the word is also used for periods loosely associated with
           the calendar or astronomical year, such as the seasonal year, the
           fiscal year, the academic year, etc. The term can also be used in
-          reference to any long period or cycle, such as the Great Year.
+          reference to any long period or cycle, such as the Great Year. <br />
           {visible6 || (
             <span
               onClick={() => handleReadmore(6)}

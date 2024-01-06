@@ -38,7 +38,7 @@ const TemperatureContent = () => {
           and ammonium chloride {"("}a salt{")"}. The other limit established
           was his best estimate of the average human body temperature,
           originally set at 90 °F, then 96 °F {"("}about 2.6 °F less than the
-          modern value due to a later redefinition of the scale{")"}.{" "}
+          modern value due to a later redefinition of the scale{")"}.<br />
           {visible1 || (
             <span
               onClick={() => handleReadmore(1)}
@@ -98,7 +98,8 @@ const TemperatureContent = () => {
           scale; the other major scale, Fahrenheit, is still used in the United
           States, some island territories, and Liberia. The Kelvin scale is of
           use in the sciences, with 0 K {"("}−273.15 °C{")"}representing
-          absolute zero.{" "}
+          absolute zero.
+          <br />
           {visible2 || (
             <span
               onClick={() => handleReadmore(2)}
@@ -164,7 +165,7 @@ const TemperatureContent = () => {
           in the International System of Units {"("}SI{")"}, used alongside its
           prefixed forms.It is named after the Belfast-born and University of
           Glasgow-based engineer and physicist William Thomson, 1st Baron Kelvin
-          {"("}1824–1907{")"}.{" "}
+          {"("}1824–1907{")"}.<br />
           {visible3 || (
             <span
               onClick={() => handleReadmore(3)}

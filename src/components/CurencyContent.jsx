@@ -37,7 +37,8 @@ const CurrencyContent = () => {
           100 cents, and authorized the minting of coins denominated in dollars
           and cents. U.S. banknotes are issued in the form of Federal Reserve
           Notes, popularly called greenbacks due to their predominantly green
-          color.{" "}
+          color.
+          <br />
           {visible1 || (
             <span
               onClick={() => handleReadmore(1)}
@@ -74,7 +75,8 @@ const CurrencyContent = () => {
           VND đồng has been the currency of Vietnam since 3 May 1978. It is
           issued by the State Bank of Vietnam.The dong was also the currency of
           the predecessor states of North Vietnam and South Vietnam, having
-          replaced the previously used French Indochinese piastre.{" "}
+          replaced the previously used French Indochinese piastre.
+          <br />
           {visible2 || (
             <span
               onClick={() => handleReadmore(2)}
@@ -109,6 +111,7 @@ const CurrencyContent = () => {
           group of states is officially known as the euro area or, commonly, the
           eurozone, and includes about 344 million citizens as of 2023. The euro
           is divided into 100 euro cents.
+          <br />
           {visible3 || (
             <span
               onClick={() => handleReadmore(3)}
@@ -166,6 +169,7 @@ const CurrencyContent = () => {
           currency in the foreign exchange market, after the United States
           dollar {"("}US${")"} and the euro.It is also widely used as a third
           reserve currency after the US dollar and the euro.
+          <br />
           {visible4 || (
             <span
               onClick={() => handleReadmore(4)}

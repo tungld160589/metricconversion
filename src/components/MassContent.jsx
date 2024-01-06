@@ -31,7 +31,7 @@ const MassContent = () => {
         <p className="span-convert-content">
           The ounce is any of several different units of mass, weight, or volume
           and is derived almost unchanged from the uncia, an Ancient Roman unit
-          of measurement.{" "}
+          of measurement. <br />
           {visible1 || (
             <span
               onClick={() => handleReadmore(1)}
@@ -41,6 +41,7 @@ const MassContent = () => {
             </span>
           )}
         </p>
+        <p></p>
         {visible1 && (
           <>
             <p className="span-convert-content">
@@ -67,6 +68,7 @@ const MassContent = () => {
           The gram {"("}originally gramme; SI unit symbol g{")"} is a unit of
           mass in the International System of Units {"("}SI{")"} equal to one
           thousandth of a kilogram.
+          <br />
           {visible2 || (
             <span
               onClick={() => handleReadmore(2)}
@@ -110,7 +112,7 @@ const MassContent = () => {
           international standard symbol for the avoirdupois pound is lb; an
           alternative symbol is lb<sub>m </sub>
           {"("}for most pound definitions{")"}, # {"("}chiefly in the U.S.{")"}
-          ,and ℔ or ″̶ {"("}specifically for the apothecaries' pound{")"}.{" "}
+          ,and ℔ or ″̶ {"("}specifically for the apothecaries' pound{")"}.<br />
           {visible3 || (
             <span
               onClick={() => handleReadmore(3)}
@@ -145,7 +147,8 @@ const MassContent = () => {
           International System of Units {"("}SI{")"}, having the unit symbol kg.
           It is a widely used measure in science, engineering and commerce
           worldwide, and is often simply called a kilo colloquially. It means
-          'one thousand grams'.{" "}
+          'one thousand grams'.
+          <br />
           {visible4 || (
             <span
               onClick={() => handleReadmore(4)}

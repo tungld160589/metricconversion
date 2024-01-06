@@ -58,6 +58,7 @@ const VolumeContent = () => {
           {")"}. A cubic decimetre {"("}or litre{")"} occupies a volume of 10 cm
           × 10 cm × 10 cm {"("}see figure
           {")"} and is thus equal to one-thousandth of a cubic metre.
+          <br />
           {visible1 || (
             <span
               onClick={() => handleReadmore(1)}

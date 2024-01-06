@@ -740,6 +740,7 @@ a {
 .job-profile-aboutus {
   color: #fcaf26;
 }
+/*------------ About US Form-------------------*/
 .aboutus-form {
   display: grid;
   grid-template-columns: 25% 60%;
@@ -774,4 +775,8 @@ a {
   cursor: pointer;
   color: orangered;
   background-color: #fff;
+}
+.error-div-form-aboutus {
+  grid-column: 1 / span 2;
+  text-align: center;
 }

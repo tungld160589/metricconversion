@@ -6,8 +6,18 @@ import Outmission from "../img/OutMission.jpg";
 import WhatSetsUsApart from "../img/WhatSetsUsApart.jpg";
 import tungjpg from "../img/Tung.jpg";
 import nguyenimg from "../img/Nguyen-img.jpg";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 const Aboutus = () => {
+  const [fName, setFName] = useState();
+  const [lName, setLName] = useState();
+  const [yEmail, setYEmail] = useState();
+  const [txtSumbit, setTxtSubmit] = useState();
+  const [errorFName, setErrorFName] = useState(false);
+  const [errorLName, setErrorLName] = useState(false);
+  const [errorYEmail, setErrorYEmail] = useState(false);
+  const [errorTxtSubmit, setErrorTxtSubmit] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -141,25 +151,37 @@ const Aboutus = () => {
             <input
               className="aboutus-form-input"
               type="text"
+              value={fName}
               placeholder="Enter First Name"
+              onChange={(e) => setFName(e.target.value)}
             />
-
+            <div className="error-div-form-aboutus">Error</div>
             <label className="label-form-contactus">Last Name: </label>
             <input
               className="aboutus-form-input"
               type="text"
+              value={lName}
               placeholder="Enter Last Name"
+              onChange={(e) => setLName(e.target.value)}
             />
-
+            <div className="error-div-form-aboutus">Error</div>
             <label className="label-form-contactus">Your Email: </label>
             <input
               className="aboutus-form-input"
               type="email"
+              value={yEmail}
               placeholder="Enter Your Email Address"
+              onChange={(e) => setYEmail(e.target.value)}
             />
-
+            <div className="error-div-form-aboutus">Error</div>
             <label className="label-form-contactus">Content: </label>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea
+              value={txtSumbit}
+              cols="30"
+              rows="10"
+              onChange={(e) => setTxtSubmit(e.target.value)}
+            ></textarea>
+            <div className="error-div-form-aboutus">Error</div>
             <div className="btn-control-aboutus">
               <button className="aboutus-form-btn">Send</button>
             </div>
