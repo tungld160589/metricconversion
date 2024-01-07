@@ -174,7 +174,7 @@ const ConvertGraph = (props) => {
                 &#11167;
               </div>
               {listVisibleRight && IDSelectLeft && (
-                <ul className="list-unit-convert">
+                <ul className="list-unit-convert right-list">
                   {leftList.map((option, indexR) => (
                     <li
                       key={indexR}
