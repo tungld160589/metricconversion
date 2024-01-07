@@ -18,10 +18,11 @@ const ConvertGraph = (props) => {
   const [txtChooseLeft, settxtChooseLeft] = useState();
   const [IDSelectLeft, setIDSelectLeft] = useState();
   const [IDSelectRight, setIDSelectRight] = useState();
-  const [txtToolTip, setTxtToolTip] = useState();
+  const [txtToolTip, setTxtToolTip] = useState("");
   const [visibleToolTip, setVisibleToolTip] = useState(false);
   const [statusL, setStatusL] = useState(false);
   const [statusR, setStatusR] = useState(false);
+  const [visibleToolTipRight, setVisibleTooltipRight] = useState(false);
 
   const selectOptionL = (option) => {
     setSelectedOption(option.nameOfUnit);
@@ -35,6 +36,7 @@ const ConvertGraph = (props) => {
   //Khi Clich vào để hiện danh sách bên Trái
   const toggleListL = () => {
     setListVisibleLeft(!listVisibleLeft);
+
     //Kiểm tra trạng thái hiển thị của ToolTip nếu true thì trả về false
     if (visibleToolTip) {
       setVisibleToolTip(!visibleToolTip);
@@ -104,6 +106,12 @@ const ConvertGraph = (props) => {
     }
   };
 
+  const handleRightMouseLeave = () => {
+    if (visibleToolTipRight) {
+      setVisibleTooltipRight(!visibleToolTipRight);
+    }
+  };
+
   return (
     <div className="convertgraph-control">
       <div className="bg-group-convert-control">
@@ -147,9 +155,19 @@ const ConvertGraph = (props) => {
             </div>
           </div>
         </div>
+        {/*---------------------------------Right------------------------------------*/}
         <div className="bg-convert-right-control">
           <div className="convert-right-control">
-            <div className="txt-convert-right" onClick={toggleListR}>
+            <div
+              className="txt-convert-right tooltip"
+              onClick={() => {
+                toggleListR();
+                if (!IDSelectLeft) {
+                  setVisibleTooltipRight(!visibleToolTipRight);
+                }
+              }}
+              onMouseLeave={handleRightMouseLeave}
+            >
               <span>{selectOptionRight || "Choose Unit Convert To:"}</span>
               <div className={`arrow-icon ${listVisibleRight ? "open" : ""}`}>
                 {" "}
@@ -169,6 +187,9 @@ const ConvertGraph = (props) => {
                     </li>
                   ))}
                 </ul>
+              )}
+              {visibleToolTipRight && (
+                <Tooltip text={"Please Choose Unit Convert From !"} />
               )}
             </div>
             <input
