@@ -4,32 +4,57 @@ const Faqs = (dataFaqs) => {
   const { faqs, index, y } = dataFaqs;
   const [answersVisible, setAnswersVisible] = useState([]);
   const [visibleFAnswer, setVisibleFAnswer] = useState([]);
+  const [tmpIndex, setTmpIndex] = useState();
   var a;
 
   const toggleAnswer = (index) => {
-    setAnswersVisible((prevAnswers) => {
-      const newAnswers = [...prevAnswers];
-      newAnswers[index] = !newAnswers[index];
-      return newAnswers;
+    setAnswersVisible((prev) => {
+      const newa = visibleStatus(prev, index);
+      return newa;
     });
   };
 
   const toggleFAnswer = (index) => {
-    setVisibleFAnswer((prevFAnswers) => {
-      const newFAnswers = [...prevFAnswers];
-      newFAnswers[index] = !newFAnswers[index];
-      return newFAnswers;
+    setVisibleFAnswer((prev) => {
+      const newa = visibleStatus(prev, index);
+      return newa;
     });
+    setTmpIndex(visibleFAnswer);
+    a = index;
   };
 
   const toggleBtnExit = (index) => {
     if (visibleFAnswer[index]) {
-      setVisibleFAnswer((prevFAnsers) => {
-        const newFAnswers = [...prevFAnsers];
-        newFAnswers[index] = !newFAnswers[index];
-        return newFAnswers;
+      setVisibleFAnswer((prev) => {
+        const newa = visibleStatus(prev, index);
+        return newa;
       });
     }
+  };
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === "Escape") {
+        if (tmpIndex[a]) {
+          setVisibleFAnswer((prev) => {
+            const newa = visibleStatus(prev, a);
+            return newa;
+          });
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
+
+  const visibleStatus = (prev, index) => {
+    const newItem = [...prev];
+    newItem[index] = !newItem[index];
+    return newItem;
   };
 
   return (
