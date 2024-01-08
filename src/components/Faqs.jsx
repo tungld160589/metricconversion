@@ -43,22 +43,26 @@ const Faqs = (dataFaqs) => {
         {answersVisible[index] && (
           <div className="answer-container">
             <div>
-              {faqs.sortanswer}
+              <p className="faq-sortanswer">{faqs.sortanswer}</p>
               {faqs.fullanswer && (
-                <p onClick={() => toggleFAnswer(index)}>View More ...</p>
+                <p
+                  onClick={() => toggleFAnswer(index)}
+                  className="answer-readmore"
+                >
+                  Read more ...
+                </p>
               )}
             </div>
             {visibleFAnswer[index] && (
               <div>
                 <div className="fqa-container-control" style={{ top: y + 10 }}>
                   <faqs.fullanswer />
-                  <button
+                  <span
                     className="fqa-fullname-exitbtn"
                     onClick={() => toggleBtnExit(index)}
-                  >
-                    <span>X</span>
-                  </button>
+                  ></span>
                 </div>
+
                 <div className="fqa-bg-fullanswer"></div>
               </div>
             )}

@@ -329,6 +329,11 @@ a {
   text-align: left;
   padding: 5px;
 }
+.faq-sortanswer {
+  font-style: italic;
+  font-size: 15px;
+}
+
 /*--------------- FAQ Full Answer---------------------*/
 
 .fqa-bg-fullanswer {
@@ -346,14 +351,68 @@ a {
   position: absolute;
   z-index: 99;
   background-color: #fff;
-  left: 13%;
+  left: 25%;
+  width: 50%;
 }
+.fqa-fullname-exitbtn::after {
+  text-align: center;
+  content: "\00d7";
+  position: absolute;
+  top: 0;
+  margin-top: 5px;
+  color: #fff;
+  font-size: 40px;
+  transform: rotate(-90deg);
+  padding-bottom: 5px;
+  padding-top: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+  background-color: #03a9f4;
+  cursor: pointer;
+}
+
 .fqa-fullname-exitbtn {
-  font-size: 30px;
-  color: red;
-  width: 40px;
-  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 93%;
 }
+
+.answer-header {
+  font-size: 24px;
+  margin-bottom: 20px;
+  max-width: 450px;
+}
+.answer-readmore {
+  font-size: 15px;
+  font-style: italic;
+  color: #587cfb;
+  font-weight: 500;
+  width: 14%;
+}
+.answer-readmore:hover {
+  cursor: pointer;
+  color: #fcaf26;
+}
+.answer-p {
+  margin-bottom: 10px;
+}
+
+.answer-ol .answer-li-ol {
+  list-style-type: decimal;
+  margin-left: 30px;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+.answer-ul .answer-li-ul {
+  list-style-type: disc;
+  margin-left: 40px;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
 /*-----------------------------------------------------*/
 /*--------------------------Convert Graph---------------------------*/
 .convert-top-baner {

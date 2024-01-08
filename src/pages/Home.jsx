@@ -17,7 +17,8 @@ export const FAQsDataList = [
   {
     id: 1,
     question: "How do I enter numbers in Scientific Notation ?",
-    sortanswer: `Scientific notation is a way of expressing numbers that are very large or very small in a concise and standardized form. It is written in the form: a x 10<sup>n</sup> where a is a number greater than or equal to 1 and less than 10, and n is an integer. Here's how you can enter numbers in scientific notation`,
+    sortanswer:
+      "Scientific notation is a way of expressing numbers that are very large or very small in a concise and standardized form. It is written in the form: a x 10^n where a is a number greater than or equal to 1 and less than 10, and n is an integer. Here's how you can enter numbers in scientific notation",
     fullanswer: Answer01,
   },
   {
