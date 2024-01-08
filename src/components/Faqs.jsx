@@ -13,8 +13,10 @@ const Faqs = (dataFaqs) => {
     setVisibleFAnswer((prev) => visibleStatus(prev, index));
   };
 
-  const toggleBtnExit = () => {
-    setVisibleFAnswer([]);
+  const toggleBtnExit = (index) => {
+    if (visibleFAnswer[index]) {
+      setVisibleFAnswer((prev) => visibleStatus(prev, index));
+    }
   };
 
   useEffect(() => {
@@ -66,7 +68,7 @@ const Faqs = (dataFaqs) => {
                   <faqs.fullanswer />
                   <span
                     className="fqa-fullname-exitbtn"
-                    onClick={() => toggleBtnExit}
+                    onClick={() => toggleBtnExit(index)}
                   ></span>
                 </div>
 
