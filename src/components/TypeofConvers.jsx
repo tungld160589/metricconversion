@@ -63,7 +63,9 @@ const TypeofConvers = (props) => {
             {state.map((rs) => (
               <div key={rs.id}>
                 <Link to={`/${rs.type}`}>
-                  <div>{rs.nameOfUnit}</div>
+                  <div className="search-value-typeofconvert">
+                    {rs.nameOfUnit}
+                  </div>
                 </Link>
               </div>
             ))}

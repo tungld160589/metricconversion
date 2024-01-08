@@ -257,10 +257,14 @@ a {
   padding-right: 5px;
   display: grid;
   min-width: 278px;
+  row-gap: 3px;
 }
 .resultSearch div:hover {
   cursor: pointer;
   color: #fcaf26;
+}
+.search-value-typeofconvert {
+  font-weight: 400;
 }
 /*----------------------FAQs Control-------------------------*/
 .Faqs-control {
