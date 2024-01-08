@@ -4,7 +4,6 @@ const Faqs = (dataFaqs) => {
   const { faqs, index, y } = dataFaqs;
   const [answersVisible, setAnswersVisible] = useState([]);
   const [visibleFAnswer, setVisibleFAnswer] = useState([]);
-  const [tmpIndex, setTmpIndex] = useState();
 
   const toggleAnswer = (index) => {
     setAnswersVisible((prev) => visibleStatus(prev, index));
@@ -12,21 +11,16 @@ const Faqs = (dataFaqs) => {
 
   const toggleFAnswer = (index) => {
     setVisibleFAnswer((prev) => visibleStatus(prev, index));
-    setTmpIndex(index);
   };
 
-  const toggleBtnExit = (index) => {
-    if (visibleFAnswer[index]) {
-      setVisibleFAnswer((prev) => visibleStatus(prev, index));
-    }
+  const toggleBtnExit = () => {
+    setVisibleFAnswer([]);
   };
 
   useEffect(() => {
     const handleKeyPress = (event) => {
       if (event.key === "Escape") {
-        if (visibleFAnswer[tmpIndex]) {
-          setVisibleFAnswer((prev) => visibleStatus(prev, tmpIndex));
-        }
+        setVisibleFAnswer([]);
       }
     };
 
@@ -72,7 +66,7 @@ const Faqs = (dataFaqs) => {
                   <faqs.fullanswer />
                   <span
                     className="fqa-fullname-exitbtn"
-                    onClick={() => toggleBtnExit(index)}
+                    onClick={() => toggleBtnExit}
                   ></span>
                 </div>
 
