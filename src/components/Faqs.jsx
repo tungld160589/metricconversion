@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { useState } from "react";
 const Faqs = (dataFaqs) => {
   const { faqs, index, y } = dataFaqs;
   const [answersVisible, setAnswersVisible] = useState([]);
   const [visibleFAnswer, setVisibleFAnswer] = useState([]);
+  var a;
 
   const toggleAnswer = (index) => {
     setAnswersVisible((prevAnswers) => {
@@ -13,8 +15,8 @@ const Faqs = (dataFaqs) => {
   };
 
   const toggleFAnswer = (index) => {
-    setVisibleFAnswer((prevFAnsers) => {
-      const newFAnswers = [...prevFAnsers];
+    setVisibleFAnswer((prevFAnswers) => {
+      const newFAnswers = [...prevFAnswers];
       newFAnswers[index] = !newFAnswers[index];
       return newFAnswers;
     });

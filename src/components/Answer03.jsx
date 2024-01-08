@@ -1,7 +1,10 @@
 const Answer03 = () => {
   return (
     <div className="answerCMP-container">
-      <h1 className="answer-header">What is a nautical mile ?</h1>
+      <center>
+        <h1 className="answer-header">What is a nautical mile ?</h1>
+      </center>
+
       <p className="answer-p">
         A nautical mile is a unit of measurement used in navigation and maritime
         contexts. It is commonly used for measuring distances at sea or in the

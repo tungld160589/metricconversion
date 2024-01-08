@@ -1,7 +1,10 @@
 const Answer04 = () => {
   return (
     <div className="answerCMP-container">
-      <h1 className="answer-header">What about rainfall ?</h1>
+      <center>
+        <h1 className="answer-header">What about rainfall ?</h1>
+      </center>
+
       <p className="answer-p">
         Rainfall is typically measured in units of depth, indicating the amount
         of rain that has fallen over a specific area. The common units for

@@ -1,9 +1,12 @@
 const Answer05 = () => {
   return (
     <div className="answerCMP-container">
-      <h1 className="answer-header">
-        How do i convert betrween inches of rain, and milimeter of rain ?
-      </h1>
+      <center>
+        <h1 className="answer-header">
+          How do i convert betrween inches of rain, and milimeter of rain ?
+        </h1>
+      </center>
+
       <p className="answer-p">
         To convert between inches of rain and millimeters of rain, you can use
         the following conversion factor:

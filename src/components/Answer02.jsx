@@ -1,7 +1,9 @@
 const Answer02 = () => {
   return (
     <div className="answerCMP-container">
-      <h1 className="answer-header">What is a knot ?</h1>
+      <center>
+        <h1 className="answer-header">What is a knot ?</h1>
+      </center>
       <p className="answer-p">
         A knot is a unit of speed used in navigation and aviation. It is defined
         as one nautical mile per hour (nautical mile/h) and is commonly
