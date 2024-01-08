@@ -360,14 +360,13 @@ a {
 }
 .answerCMP-container {
   height: 600px;
-  overflow: scroll;
+  overflow: auto;
 }
 .fqa-fullname-exitbtn::after {
   text-align: center;
   content: "\00d7";
   position: absolute;
   top: 0;
-  margin-top: 5px;
   color: #fff;
   font-size: 40px;
   transform: rotate(-90deg);
@@ -382,7 +381,7 @@ a {
 
 .fqa-fullname-exitbtn {
   position: absolute;
-  top: 0;
+  top: -5px;
   left: 93%;
 }
 

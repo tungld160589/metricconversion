@@ -5,7 +5,6 @@ const Faqs = (dataFaqs) => {
   const [answersVisible, setAnswersVisible] = useState([]);
   const [visibleFAnswer, setVisibleFAnswer] = useState([]);
   const [tmpIndex, setTmpIndex] = useState();
-  var a;
 
   const toggleAnswer = (index) => {
     setAnswersVisible((prev) => visibleStatus(prev, index));
@@ -13,6 +12,7 @@ const Faqs = (dataFaqs) => {
 
   const toggleFAnswer = (index) => {
     setVisibleFAnswer((prev) => visibleStatus(prev, index));
+    setTmpIndex(index);
   };
 
   const toggleBtnExit = (index) => {
@@ -24,11 +24,8 @@ const Faqs = (dataFaqs) => {
   useEffect(() => {
     const handleKeyPress = (event) => {
       if (event.key === "Escape") {
-        if (tmpIndex[a]) {
-          setVisibleFAnswer((prev) => {
-            const newa = visibleStatus(prev, a);
-            return newa;
-          });
+        if (visibleFAnswer[tmpIndex]) {
+          setVisibleFAnswer((prev) => visibleStatus(prev, tmpIndex));
         }
       }
     };
