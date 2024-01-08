@@ -358,6 +358,10 @@ a {
   left: 25%;
   width: 50%;
 }
+.answerCMP-container {
+  height: 600px;
+  overflow: scroll;
+}
 .fqa-fullname-exitbtn::after {
   text-align: center;
   content: "\00d7";

@@ -8,27 +8,16 @@ const Faqs = (dataFaqs) => {
   var a;
 
   const toggleAnswer = (index) => {
-    setAnswersVisible((prev) => {
-      const newa = visibleStatus(prev, index);
-      return newa;
-    });
+    setAnswersVisible((prev) => visibleStatus(prev, index));
   };
 
   const toggleFAnswer = (index) => {
-    setVisibleFAnswer((prev) => {
-      const newa = visibleStatus(prev, index);
-      return newa;
-    });
-    setTmpIndex(visibleFAnswer);
-    a = index;
+    setVisibleFAnswer((prev) => visibleStatus(prev, index));
   };
 
   const toggleBtnExit = (index) => {
     if (visibleFAnswer[index]) {
-      setVisibleFAnswer((prev) => {
-        const newa = visibleStatus(prev, index);
-        return newa;
-      });
+      setVisibleFAnswer((prev) => visibleStatus(prev, index));
     }
   };
 
