@@ -9,7 +9,10 @@
   2.  Bùi Trọng Anh Đức (Student1513435)
   3.  Lê Khánh Nguyên (Student1513438)
 - Design by Figma
-- Website built with React JS
+- Langues Use:
+  + HTML
+  + CSS
+  + React JS
   <br>
   =======================================<br>
   Documentations : https://github.com/tungld160589/metricconversion/tree/main/Documentations <br>
