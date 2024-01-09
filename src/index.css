@@ -530,7 +530,13 @@ a {
 }
 .output-right {
   pointer-events: none;
+  background-color: white;
+  border: 1px #ccc;
+  text-align: center;
+  padding-top: 2px;
+  margin-left: 14%;
 }
+
 .convert-result {
   position: absolute;
   background: #d9d9d9;

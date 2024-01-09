@@ -191,11 +191,9 @@ const ConvertGraph = (props) => {
                 <Tooltip text={"Please Choose Unit Convert From !"} />
               )}
             </div>
-            <input
-              className="output-right"
-              type="text"
-              value={outputRight}
-            ></input>
+            <div className="output-right" type="text">
+              {outputRight}
+            </div>
           </div>
         </div>
         <div className="convert-change-img">
