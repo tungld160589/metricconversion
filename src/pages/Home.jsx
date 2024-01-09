@@ -69,7 +69,7 @@ export const FAQsDataList = [
 
 const Home = () => {
   const [y, setY] = useState();
-
+  // Lấy giá trị y gán cho y để biết toạ độ hiển thị FAnswer
   const getPosition = () => {
     const y = window.scrollY;
     setY(y);
@@ -77,6 +77,7 @@ const Home = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    //Khi sự kiện scroll xảy ra gọi hàm để lấy giá trị Y
     window.addEventListener("scroll", getPosition);
     return () => {
       window.removeEventListener("scroll", getPosition);
