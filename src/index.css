@@ -258,6 +258,7 @@ a {
   display: grid;
   min-width: 278px;
   row-gap: 3px;
+  z-index: 999;
 }
 .resultSearch div:hover {
   cursor: pointer;
@@ -266,6 +267,7 @@ a {
 .search-value-typeofconvert {
   font-weight: 400;
 }
+
 /*----------------------FAQs Control-------------------------*/
 .Faqs-control {
   background-color: #bda0a0;
