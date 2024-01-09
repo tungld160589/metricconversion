@@ -5,7 +5,6 @@ import FactorList from "../Data/FactorList.json";
 import Tooltip from "./Tooltip";
 
 const ConvertGraph = (props) => {
-  const [convertunit, setConvertUnit] = useState(ConvertList);
   const { sortby } = props;
   const [leftList, setleftList] = useState();
   const [listVisibleLeft, setListVisibleLeft] = useState(false);
@@ -42,7 +41,7 @@ const ConvertGraph = (props) => {
       setVisibleToolTip(!visibleToolTip);
     }
     //Thực hiện filter theo giá trị sortby để tạo list lựa chọn
-    let sortlist = convertunit.filter((rs) => {
+    let sortlist = ConvertList.filter((rs) => {
       let search = rs.type.toLowerCase();
       return search.indexOf(sortby) !== -1;
     });
@@ -69,7 +68,7 @@ const ConvertGraph = (props) => {
     setIDSelectRight(option.id);
     settxtChooseRight(option.nameOfUnit);
     setStatusR(!statusR);
-    calOutput(option.id, IDSelectLeft, inputLeft);
+    calOutput(IDSelectLeft, option.id, inputLeft);
   };
   // Hàm nhân giá trị input với hệ số chuyển đổi nếu input notnull
   const calOutput = (a, b, c) => {
