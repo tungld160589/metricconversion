@@ -30,6 +30,8 @@ export const tempData = [
 const TypeofConvers = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [state, setState] = useState(ConvertList);
+
+  // thực thi sự kiện onchange khi thay đổi giá trị searchbox
   const searchHandler = (e) => {
     const text11 = e.target.value;
     setSearchTerm(text11);

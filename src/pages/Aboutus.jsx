@@ -56,7 +56,7 @@ const Aboutus = () => {
     const reMail =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const errors = {};
-
+    //Kiểm tra các giá trị nhập vào
     if (!fName.trim()) {
       errors.fName = "First Name is required";
       inputFName.focus();

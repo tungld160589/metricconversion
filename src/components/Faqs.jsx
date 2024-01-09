@@ -4,15 +4,15 @@ const Faqs = (dataFaqs) => {
   const { faqs, index, y } = dataFaqs;
   const [answersVisible, setAnswersVisible] = useState([]);
   const [visibleFAnswer, setVisibleFAnswer] = useState([]);
-
+  // Xử lý sự kiện click vào câu hỏi
   const toggleAnswer = (index) => {
     setAnswersVisible((prev) => visibleStatus(prev, index));
   };
-
+  // Xử lý sự kiện click vào Read More
   const toggleFAnswer = (index) => {
     setVisibleFAnswer((prev) => visibleStatus(prev, index));
   };
-
+  // Xử lý sự kiện click vào nut exit
   const toggleBtnExit = (index) => {
     if (visibleFAnswer[index]) {
       setVisibleFAnswer((prev) => visibleStatus(prev, index));
@@ -20,19 +20,20 @@ const Faqs = (dataFaqs) => {
   };
 
   useEffect(() => {
+    // function khi nhấn nút ESC trên bàn phím
     const handleKeyPress = (event) => {
       if (event.key === "Escape") {
         setVisibleFAnswer([]);
       }
     };
-
+    //Xử lý sự kiện khi nhấn nút bất kỳ trên bàn phím
     window.addEventListener("keydown", handleKeyPress);
 
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
-
+  // Chuyển trạng thái visible băng cách tạo ra 1 mảng trạng thái theo phần tử index
   const visibleStatus = (prev, index) => {
     const newItem = [...prev];
     newItem[index] = !newItem[index];
