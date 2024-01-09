@@ -96,7 +96,7 @@ const ConvertGraph = (props) => {
       }
     }
   };
-
+  // Phải thêm If để ràng buộc tránh trường hợp lỗi khi di chuyển chuột vào ra vung chọn liên tục
   const handleRightMouseLeave = () => {
     if (visibleToolTipRight) setVisibleTooltipRight(!visibleToolTipRight);
   };
