@@ -36,10 +36,6 @@ const ConvertGraph = (props) => {
   const toggleListL = () => {
     setListVisibleLeft(!listVisibleLeft);
 
-    //Kiểm tra trạng thái hiển thị của ToolTip nếu true thì trả về false
-    if (visibleToolTip) {
-      setVisibleToolTip(!visibleToolTip);
-    }
     //Thực hiện filter theo giá trị sortby để tạo list lựa chọn
     let sortlist = ConvertList.filter((rs) => {
       let search = rs.type.toLowerCase();
@@ -51,10 +47,6 @@ const ConvertGraph = (props) => {
   // Khi Click vào để hiện danh sách bên phải
   const toggleListR = () => {
     setListVisibleRight(!listVisibleRight);
-    //Kiểm tra trạng thái hiển thị của ToolTip nếu true thì trả về false
-    if (visibleToolTip) {
-      setVisibleToolTip(!visibleToolTip);
-    }
   };
   // Khi Lựa Chọn Danh Sách Bên Trái
   const handleClickLeft = (option) => {
@@ -106,9 +98,11 @@ const ConvertGraph = (props) => {
   };
 
   const handleRightMouseLeave = () => {
-    if (visibleToolTipRight) {
-      setVisibleTooltipRight(!visibleToolTipRight);
-    }
+    if (visibleToolTipRight) setVisibleTooltipRight(!visibleToolTipRight);
+  };
+
+  const handleLeftInputMouseLeave = () => {
+    if (visibleToolTip) setVisibleToolTip(!visibleToolTip);
   };
 
   return (
@@ -139,7 +133,11 @@ const ConvertGraph = (props) => {
                 )}
               </div>
             </div>
-            <div className="tooltip" onClick={handleClickInputLeft}>
+            <div
+              className="tooltip"
+              onClick={handleClickInputLeft}
+              onMouseLeave={handleLeftInputMouseLeave}
+            >
               <input
                 className={`input-left ${IDSelectRight || "lock"}`}
                 type="number"
