@@ -9,7 +9,7 @@
   2.  Bùi Trọng Anh Đức (Student1513435)
   3.  Lê Khánh Nguyên (Student1513438)
 - Design by Figma
-- Langues Use:
+- Framework and Langues Use:
   + HTML
   + CSS
   + React JS
